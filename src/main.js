@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import App from './App.vue';
 import './common/scss/index.scss';
+import 'animate.css';
 
 /* 微信自定义分享 */
 import './weChat/index';
