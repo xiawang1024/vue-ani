@@ -79,7 +79,7 @@ class WeChatConf extends WeChat {
 		super(props);
 	}
 	init() {
-		this.hasCode();
+		// this.hasCode();
 		axios.post(SHARE_URL, Qs.stringify({ url: window.location.href })).then((res) => {
 			let data = res.data;
 			wx.config({
