@@ -1,8 +1,8 @@
 module.exports = {
 	plugins: {
+		autoprefixer: {},
 		'postcss-import': {},
 		'postcss-url': {},
-		autoprefixer: {},
 		'postcss-preset-env': {},
 		'postcss-aspect-ratio-mini': {},
 		'postcss-write-svg': {
