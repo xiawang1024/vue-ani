@@ -40,14 +40,14 @@ export default {
   data() {
     return {
       componentId:1,
-      isShow:true,
+      isShow:false,
       isLoading:false
     }
   },
   computed: {
     componentName:function () {      
-      return `Page9`
-      // return `Page${this.componentId}`
+      // return `Page9`
+      return `Page${this.componentId}`
     }
   },
   methods:{
