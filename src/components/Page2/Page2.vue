@@ -18,31 +18,34 @@ export default {
     }
   },
   mounted() {
-    const animeTimeLine = anime.timeline()
-    animeTimeLine.add({
-      targets:this.$refs.page,
-      backgroundColor:'#0c1219',
-      easing: 'easeOutExpo',
-      delay:2000,
-      duration:300,
-      offset:0,
-      begin:() => {
-        this.$nextTick(() => {
-          this.lightSwitch = 'off'
-        })
-      }
-    }).add({
-      targets:'.pic-wrap',
-      opacity:1,
-      offset:'+=500',
-      duration:100,
-      easing: 'easeOutExpo',
-      complete:() => {
-        this.picSlide()
-      }
-    })    
+    this.animateInit()
   },
   methods:{
+    animateInit(){
+      const animeTimeLine = anime.timeline()
+      animeTimeLine.add({
+        targets:this.$refs.page,
+        backgroundColor:'#0c1219',
+        easing: 'easeOutExpo',
+        delay:2000,
+        duration:300,
+        offset:0,
+        begin:() => {
+          this.$nextTick(() => {
+            this.lightSwitch = 'off'
+          })
+        }
+      }).add({
+        targets:'.pic-wrap',
+        opacity:1,
+        offset:'+=100',
+        duration:100,
+        easing: 'easeOutExpo',
+        complete:() => {
+          this.picSlide()
+        }
+      })    
+    },
     picSlide(interval = 600) {
       let picOrder = 1,timeId=null;
       clearInterval(timeId)
