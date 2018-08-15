@@ -4,6 +4,7 @@
     <div class="light animated flash" :class="[lightSwitch]"></div>
     <div class="pic-wrap" :class="[picName]">
     </div>
+    <img class="qrcode animated fadeIn delay-4s" :src="qrcode" alt="">
   </div>
 </template>
 
@@ -14,7 +15,8 @@ export default {
   data() {
     return {
       lightSwitch:'on',
-      picName:'pic-1'
+      picName:'pic-1',
+      qrcode:require('../../common/imgs/weixin-qrcode.png')
     }
   },
   mounted() {
@@ -76,6 +78,13 @@ export default {
   height: 100%;
   overflow: hidden;
   background: #7cb3ff;
+  .qrcode{
+    position: absolute;
+    top:20px;
+    right: 20px;
+    width: 120px;
+    height: 120px;
+  }
   .delay{
     animation-delay: 0.5s;
   }
@@ -139,7 +148,7 @@ export default {
     }
     &.pic-6{
       bottom:0;
-      height: 303px;
+      height: 700px;
       background: url('./2-6.png') center center no-repeat;
       background-size: contain;
     }

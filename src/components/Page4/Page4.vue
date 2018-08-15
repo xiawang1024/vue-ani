@@ -1,15 +1,21 @@
 <template>
-    <div class="page">
-        <div class="cloud animated flash delay-0.5s"></div>
-        <div class="person-1 animated fadeIn delay-1s"></div>
-        <div class="person-2 animated fadeIn delay-2s"></div>
-        <div class="person-3 animated fadeIn delay-3s"></div>
-        <div class="bottom"></div>
-    </div>
+  <div class="page">
+    <div class="cloud animated flash delay-0.5s"></div>
+    <div class="person-1 animated fadeIn delay-1s"></div>
+    <div class="person-2 animated fadeIn delay-2s"></div>
+    <div class="person-3 animated fadeIn delay-3s"></div>
+    <div class="bottom"></div>
+    <img class="qrcode animated fadeIn delay-4s" :src="qrcode">
+  </div>
 </template>
 <script>
 export default {
-  name:'Page1'
+  name:'Page4',
+  data() {
+    return {
+      qrcode:require('../../common/imgs/weixin-qrcode.png')
+    }
+  }
 }
 </script>
 
@@ -24,6 +30,13 @@ export default {
   height: 100%;
   overflow: hidden;
   background: #9bd8ff;
+  .qrcode{
+    position: absolute;
+    bottom:20px;
+    right: 20px;
+    width: 120px;
+    height: 120px;
+  }
   $top : 0;
   .abs {
     position: absolute;

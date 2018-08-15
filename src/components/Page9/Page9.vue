@@ -2,12 +2,18 @@
   <div class="page">
     <div class="font animated fadeInLeft"></div>
     <div class="person animated jello"></div>
+    <img class="qrcode animated fadeIn delay-2s" :src="qrcode">
   </div>
 </template>
 
 <script>
 export default {
-  name:'Page9'
+  name:'Page9',
+  data() {
+    return {
+      qrcode:require('../../common/imgs/weixin-qrcode.png')
+    }
+  }
 }
 </script>
 
@@ -23,6 +29,13 @@ export default {
   overflow: hidden;
   background: url('./9-1.png') center center no-repeat #ffffff;
   background-size: cover;
+  .qrcode{
+    position: absolute;
+    bottom:20px;
+    right: 20px;
+    width: 120px;
+    height: 120px;
+  }
   .abs {
     position: absolute;
     left:0;

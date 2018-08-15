@@ -5,12 +5,18 @@
     <div class="bottom animated fadeInUp"></div>
     <div class="person animated fadeInLeft"></div>
     <div class="song animated jackInTheBox"></div>
+    <img class="qrcode animated fadeIn delay-4s" :src="qrcode">
   </div>
 </template>
 
 <script>
 export default {
   name:'Page5',
+  data() {
+    return {
+      qrcode:require('../../common/imgs/weixin-qrcode.png')
+    }
+  }
 }
 </script>
 
@@ -27,6 +33,13 @@ export default {
   background: #ffffff;
   .delay-03{
     animation-delay: 0.3s;
+  }
+  .qrcode{
+    position: absolute;
+    bottom:20px;
+    right: 20px;
+    width: 120px;
+    height: 120px;
   }
   .abs {
     position: absolute;

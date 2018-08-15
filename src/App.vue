@@ -45,8 +45,8 @@ export default {
     }
   },
   computed: {
-    componentName:function () {
-      return `Page4`
+    componentName:function () {      
+      return `Page9`
       // return `Page${this.componentId}`
     }
   },
@@ -55,7 +55,6 @@ export default {
       this.isLoading = true;
       let componentId = this.rand();
       this.$nextTick(() => {
-        
         this.show(componentId)        
       })
     },
@@ -83,7 +82,7 @@ export default {
   .fade-enter-active, .fade-leave-active {
     transition: opacity .25s;
   }
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  .fade-enter, .fade-leave-to  {
     opacity: 0;
   }
 }

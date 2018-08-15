@@ -9,11 +9,17 @@
       <div class="person animated fadeIn"></div>
     </div>
     <div class="hotdog animated fadeIn delay-3"></div>
+    <img class="qrcode animated fadeIn delay-4s" :src="qrcode">
   </div>
 </template>
 <script>
 export default {
-  name:'Page3'
+  name:'Page3',
+  data() {
+    return {
+      qrcode:require('../../common/imgs/weixin-qrcode.png')
+    }
+  }
 }
 </script>
 
@@ -28,6 +34,13 @@ export default {
   height: 100%;
   overflow: hidden;
   background: #9bd8ff;
+  .qrcode{
+    position: absolute;
+    bottom:20px;
+    right: 20px;
+    width: 120px;
+    height: 120px;
+  }
   $top : 0;
   .abs {
     position: absolute;
