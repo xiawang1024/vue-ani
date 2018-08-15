@@ -5,7 +5,7 @@
     <div class="font-1"></div>
     <div class="font-2"></div>
     <div class="bottom"></div>
-    <div class="button" @click="clickHandler"></div>
+    <div class="button animated tada infinite" @click="clickHandler"></div>
     <div class="qrcode-font-top"></div>
     <div class="qrcode">
       <img src="./qrcode.png" alt="" class="img">
@@ -19,20 +19,20 @@ import anime from 'animejs'
 export default {
   name: 'Home',
   mounted() {
-    anime({
-      targets: '.button',
-      scale: {
-        value: 1.215,
-        duration: 1600,
-        delay: 800,
-        easing: 'easeInOutQuart'
-      },
-      loop:true
-    });
+    // anime({
+    //   targets: '.button',
+    //   scale: {
+    //     value: 1.215,
+    //     duration: 1600,
+    //     delay: 800,
+    //     easing: 'easeInOutQuart'
+    //   },
+    //   loop:true
+    // });
   },
   methods:{
     clickHandler(){
-      alert(11)
+      this.$emit('startHandler')
     }
   }
 }
@@ -123,5 +123,6 @@ export default {
     background: url('./bottom.png') center center no-repeat;
     background-size: contain;
   }
+  
 }
 </style>

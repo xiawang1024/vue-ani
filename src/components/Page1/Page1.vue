@@ -1,11 +1,11 @@
 <template>
   <div class="page">
-    <div class="cloud animated flash delay-0.5s"></div>
-    <div class="font-1 animated fadeInRight delay-1s"></div>
-    <div class="font-2 animated fadeInLeft delay-2s"></div>
+    <div class="cloud animated flash"></div>
+    <div class="font-1 animated fadeInRight"></div>
+    <div class="font-2 animated fadeInLeft"></div>
     <div class="bottom"></div>
-    <div class="font animated fadeInLeft delay-3s"></div>
-    <div class="person animated fadeIn delay-3s"></div>
+    <div class="font animated rotateInDownLeft"></div>
+    <div class="person animated fadeInRight"></div>
   </div>
 </template>
 <script>
@@ -44,6 +44,7 @@ export default {
     height: 118px;
     background: url('./font-1.png') right 35px center no-repeat;
     background-size: contain;
+    animation-delay: 0.25s;
   }
   .font-2{
     @extend .abs;
@@ -51,6 +52,7 @@ export default {
     height: 118px;
     background: url('./font-2.png') left 35px center no-repeat;
     background-size: contain;
+    animation-delay: 0.75s;
   }
   .font{
     @extend .abs;
@@ -58,6 +60,7 @@ export default {
     height: 328px;
      background: url('./font.png') left 35px center no-repeat;
     background-size: contain;
+    animation-delay: 1.25s;
   }
   .person{
     @extend .abs;
@@ -65,6 +68,7 @@ export default {
     height: 271px;
      background: url('./person.png') right 35px center no-repeat;
     background-size: contain;
+    animation-delay: 1s;
   }
   .bottom{
     @extend .abs;

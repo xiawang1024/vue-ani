@@ -1,14 +1,14 @@
 <template>
   <div class="page">
-    <div class="cloud animated flash delay-0.5s"></div>
+    <div class="cloud animated flash"></div>
     <div class="bottom"></div>
-    <div class="animated fadeOut delay-4s">
-      <div class="finger-1 animated fadeInLeft delay-1s"></div>
-      <div class="finger-2 animated fadeInLeft delay-2s"></div>
-      <div class="finger-3 animated fadeInLeft delay-3s"></div>
-      <div class="person animated fadeIn delay-1s"></div>
+    <div class="animated fadeOut delay-3">
+      <div class="finger-1 animated fadeInLeft"></div>
+      <div class="finger-2 animated fadeInLeft"></div>
+      <div class="finger-3 animated fadeInLeft"></div>
+      <div class="person animated fadeIn"></div>
     </div>
-    <div class="hotdog animated fadeIn delay-4s"></div>
+    <div class="hotdog animated fadeIn delay-3"></div>
   </div>
 </template>
 <script>
@@ -34,6 +34,9 @@ export default {
     left:0;
     width: 750px;
   }
+  .delay-3{
+    animation-delay: 3.25s;
+  }
   .cloud{
     @extend .abs;
     top:$top;
@@ -47,6 +50,7 @@ export default {
     height: 187px;
     background: url('./finger-1.png') left 92px center no-repeat;
     background-size: contain;
+    animation-delay: 0.5s;
   }
   .finger-2{
     @extend .abs;
@@ -54,6 +58,7 @@ export default {
     height: 177px;
     background: url('./finger-2.png') left 40px center no-repeat;
     background-size: contain;
+    animation-delay: 1.25s;
   }
   .finger-3{
     @extend .abs;
@@ -61,6 +66,7 @@ export default {
     height: 192px;
     background: url('./finger-3.png') left 200px center no-repeat;
     background-size: contain;
+    animation-delay: 2s;
   }
   .hotdog{
     @extend .abs;
@@ -75,6 +81,7 @@ export default {
     height: 700px;
      background: url('./person.png') right 50px center no-repeat;
     background-size: contain;
+    animation-delay: 0.75s;
   }
   .bottom{
     @extend .abs;

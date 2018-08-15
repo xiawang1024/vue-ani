@@ -21,7 +21,7 @@ export default {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background: url('./9-1.png') center center no-repeat;
+  background: url('./9-1.png') center center no-repeat #ffffff;
   background-size: cover;
   .abs {
     position: absolute;

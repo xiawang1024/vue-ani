@@ -27,7 +27,7 @@ export default {
         targets:this.$refs.page,
         backgroundColor:'#0c1219',
         easing: 'easeOutExpo',
-        delay:2000,
+        delay:2100,
         duration:300,
         offset:0,
         begin:() => {
@@ -46,7 +46,7 @@ export default {
         }
       })    
     },
-    picSlide(interval = 600) {
+    picSlide(interval = 750) {
       let picOrder = 1,timeId=null;
       clearInterval(timeId)
       timeId = setInterval(() => {
@@ -77,7 +77,7 @@ export default {
   overflow: hidden;
   background: #7cb3ff;
   .delay{
-    animation-delay: 0.8s;
+    animation-delay: 0.5s;
   }
   .abs {
     position: absolute;
