@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <Page2/>
+    <Page5/>
   </div>
 </template>
 
 <script>
-import Page2 from './components/Page2/Page2.vue'
+import Page5 from './components/Page5/Page5.vue'
 
 export default {
   name: 'app',
   components: {
-    Page2
+    Page5
   }
 }
 </script>
