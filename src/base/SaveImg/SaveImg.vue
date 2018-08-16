@@ -1,7 +1,13 @@
 <template>
     <div class="saveImg">
-        <img v-show="src" :src="src" alt="" class="img">
-        <p class="tips">长按保存 或 发送朋友</p>
+        <div>
+            <img v-show="src" :src="src" alt="" class="img">
+            <p class="tips">（长按图片保存 或 发送朋友）</p>
+        </div>
+        <div class="btn-wrap">
+            <button class="btn" @click="again">再来一次</button>
+            <button class="btn" @click="hideImg">关闭</button>
+        </div>
     </div>
 </template>
 
@@ -12,6 +18,14 @@ export default {
         src:{
             type:String,
             default:''
+        }
+    },
+    methods:{
+        again() {
+            this.$emit('againHandler')
+        },
+        hideImg() {
+            this.$emit('hideImgHandler')
         }
     }
 }
@@ -29,14 +43,31 @@ export default {
     box-sizing: border-box;
     font-size: 0;
     text-align: center;
-    background: rgba(0,0,0,0.75);
+    background: rgba(0,0,0,0.8);
     .img{
-        width: 400px;
+        width: 500px;
     }
     .tips{
         margin-top: 20px;
         font-size: 32px;
         color:#fff;
+    }
+    .btn-wrap{
+        margin-top: 60px;
+        .btn{
+            height: 60px;
+            margin: 0 30px;
+            border:none;
+            border-radius: 6px;
+            outline: none;
+            font-size: 28px;
+            background: #54bcff;
+            &:active{
+                color:#f08;
+                background: rgba(0,0,0,.3)
+            }
+        }
+
     }
 }
 </style>

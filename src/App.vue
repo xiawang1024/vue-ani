@@ -5,7 +5,9 @@
       <component ref="screen" v-show="isShow" :is="componentName"></component>
     </transition>
     <loading v-show="isLoading"></loading>
-    <save-img v-show="isShowImg" :src="src"></save-img>
+    <transition name="fade">
+      <save-img v-show="isShowImg" :src="src" @againHandler="againHandler" @hideImgHandler="hideImgHandler"></save-img>
+    </transition>
   </div>
 </template>
 
@@ -44,13 +46,13 @@ export default {
       componentId:1,
       isShow:false,
       isLoading:false,
-      isShowImg:false,
-      src:'https://ubmcmm.baidustatic.com/media/v1/0f000aXYGOBnxMf1WBlVLf.jpg'
+      isShowImg:true,
+      src:require('./common/imgs/3.png')
     }
   },
   computed: {
     componentName:function () {      
-      // return `Page9`
+      // return `Page2`
       return `Page${this.componentId}`
     }
   },
@@ -67,19 +69,27 @@ export default {
         this.isLoading = false;
         this.componentId = componentId;
         this.isShow = true;
-        setTimeout(() => {
-          this.$nextTick(() => {
-            this.isShowImg = true;
-            this.screenShot()
-          })
-        },5000)
+        this.screenShot()
       },1500)
     },
     rand(n = 9) {
       return (Math.floor(Math.random() * n + 1))
     },
     screenShot() {
-      
+      setTimeout(() => {
+        this.$nextTick(() => {
+          this.isShowImg = true;          
+        })
+      },5000)
+    },
+    hideImgHandler(){
+      this.isShowImg = false; 
+    },
+    againHandler() {
+      setTimeout(() => {
+        this.isShowImg = false; 
+        this.isShow = false;
+      },0)
     }
   }
 }
