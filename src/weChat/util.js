@@ -3,8 +3,8 @@ import axios from 'axios';
 import Qs from 'qs';
 import { appId, shareLink, shareTitle, shareDesc, shareImg } from './config';
 
-const SHARE_URL = 'https://a.weixin.hndt.com/boom/at/sign';
-const CODE_URL = 'https://a.weixin.hndt.com/boom/wx/access/subscribe';
+const SHARE_URL = 'http://a.weixin.hndt.com/boom/at/sign';
+const CODE_URL = 'http://a.weixin.hndt.com/boom/wx/access/subscribe';
 
 class WeChat {
 	constructor() {
