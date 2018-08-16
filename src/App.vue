@@ -113,9 +113,19 @@ export default {
         this.screenShot(componentId)
       },1500)
     },
-    rand(n = 9) {
+    rand(n = 27) {
       // return 2
-      return (Math.floor(Math.random() * n + 1))
+      let randArr = [1,1,1,2,2,2,3,3,4,4,5,5,2,2,2,6,6,7,7,7,8,8,9,9,9,2,2,2]
+      let randId = (Math.floor(Math.random() * n));
+      let randNum = randArr[randId];
+      if(randNum === this.componentId) {
+        if(randNum === 1) {
+          randNum +=1;
+        } else {
+          randNum -=1;
+        }
+      }
+      return randNum ;
     },
     screenShot(componentId) {
       this.src = this.srcList[componentId].src;
