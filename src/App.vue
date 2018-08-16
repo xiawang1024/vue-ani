@@ -2,15 +2,16 @@
   <div id="app">
     <Home v-on:startHandler="startHandler" v-show="!isShow" />
     <transition name="fade">
-      <component v-show="isShow" :is="componentName"></component>
+      <component ref="screen" v-show="isShow" :is="componentName"></component>
     </transition>
     <loading v-show="isLoading"></loading>
+    <save-img v-show="isShowImg" :src="src"></save-img>
   </div>
 </template>
 
 <script>
 import Loading from './base/Loading/Loading'
-
+import SaveImg from './base/SaveImg/SaveImg'
 import Home from './components/Home/Home.vue'
 import Page1 from './components/Page1/Page1.vue'
 import Page2 from './components/Page2/Page2.vue'
@@ -26,6 +27,7 @@ export default {
   name: 'app',
   components: {
     Loading,
+    SaveImg,
     Home,
     Page1,
     Page2,
@@ -41,7 +43,9 @@ export default {
     return {
       componentId:1,
       isShow:false,
-      isLoading:false
+      isLoading:false,
+      isShowImg:false,
+      src:'https://ubmcmm.baidustatic.com/media/v1/0f000aXYGOBnxMf1WBlVLf.jpg'
     }
   },
   computed: {
@@ -63,10 +67,19 @@ export default {
         this.isLoading = false;
         this.componentId = componentId;
         this.isShow = true;
+        setTimeout(() => {
+          this.$nextTick(() => {
+            this.isShowImg = true;
+            this.screenShot()
+          })
+        },5000)
       },1500)
     },
     rand(n = 9) {
       return (Math.floor(Math.random() * n + 1))
+    },
+    screenShot() {
+      
     }
   }
 }
