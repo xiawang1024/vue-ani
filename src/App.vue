@@ -25,6 +25,46 @@ import Page7 from './components/Page7/Page7.vue'
 import Page8 from './components/Page8/Page8.vue'
 import Page9 from './components/Page9/Page9.vue'
 
+const SRC_LIST =[
+        {},
+        {
+          src:require('./common/imgs/1.png'),
+          time:3000,
+        },
+        {
+          src:require('./common/imgs/2.png'),
+          time:8000,
+        },
+        {
+          src:require('./common/imgs/3.png'),
+          time:4500,
+        },
+        {
+          src:require('./common/imgs/4.png'),
+          time:5000,
+        },
+        {
+          src:require('./common/imgs/5.png'),
+          time:4500,
+        },
+        {
+          src:require('./common/imgs/6.png'),
+          time:4500,
+        },
+        {
+          src:require('./common/imgs/7.png'),
+          time:4000,
+        },
+        {
+          src:require('./common/imgs/8.png'),
+          time:4000,
+        },
+        {
+          src:require('./common/imgs/9.png'),
+          time:3500,
+        },
+      ]
+
 export default {
   name: 'app',
   components: {
@@ -46,14 +86,15 @@ export default {
       componentId:1,
       isShow:false,
       isLoading:false,
-      isShowImg:true,
-      src:require('./common/imgs/3.png')
+      isShowImg:false,
+      srcList:SRC_LIST,
+      src:''
     }
   },
   computed: {
     componentName:function () {      
-      return `Page9`
-      // return `Page${this.componentId}`
+      // return `Page9`
+      return `Page${this.componentId}`
     }
   },
   methods:{
@@ -69,18 +110,20 @@ export default {
         this.isLoading = false;
         this.componentId = componentId;
         this.isShow = true;
-        this.screenShot()
+        this.screenShot(componentId)
       },1500)
     },
     rand(n = 9) {
+      // return 2
       return (Math.floor(Math.random() * n + 1))
     },
-    screenShot() {
+    screenShot(componentId) {
+      this.src = this.srcList[componentId].src;
       setTimeout(() => {
         this.$nextTick(() => {
           this.isShowImg = true;          
         })
-      },5000)
+      },this.srcList[componentId].time)
     },
     hideImgHandler(){
       this.isShowImg = false; 
