@@ -2,7 +2,7 @@
     <div class="saveImg">
         <div>
             <img v-show="src" :src="src" alt="" class="img">
-            <p class="tips">（长按图片保存 或 发送朋友）</p>
+            <p class="tips">（长按图片保存发送朋友圈）</p>
         </div>
         <div class="btn-wrap">
             <button class="btn" @click="again">再来一次</button>
