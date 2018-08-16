@@ -1,17 +1,38 @@
 <template>
   <div class="page">
     <div class="font animated fadeInLeft"></div>
-    <div class="person animated jello"></div>
+    <div class="person"></div>
+    <div class="person-1"></div>
     <img class="qrcode animated fadeIn delay-2s" :src="qrcode">
   </div>
 </template>
 
 <script>
+import anime from 'animejs'
 export default {
   name:'Page9',
   data() {
     return {
       qrcode:require('../../common/imgs/weixin-qrcode.png')
+    }
+  },
+  mounted() {
+    this.animeInit()
+  },
+  methods:{
+    animeInit() {
+      const animeTimeLine = anime.timeline()
+      animeTimeLine.add({
+        targets:'.person',
+        opacity:[0,1,0],
+        delay:0,
+        duration:2200,
+        easing:'easeOutExpo'
+      }).add({
+        targets:'.person-1',
+        opacity:1,
+        easing:'easeOutExpo'
+      })
     }
   }
 }
@@ -54,7 +75,15 @@ export default {
     height: 430px;
     background:url('./person.png') center center no-repeat;
     background-size: contain; 
-    animation-delay: 1.2s;
+    opacity: 0;
+  }
+  .person-1{
+    @extend .abs;
+    top:720px;
+    height: 300px;
+    background:url('./person-1.png') center center no-repeat;
+    background-size: contain; 
+    opacity: 0;
   }
 }
 </style>

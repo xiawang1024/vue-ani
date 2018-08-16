@@ -52,8 +52,8 @@ export default {
   },
   computed: {
     componentName:function () {      
-      // return `Page2`
-      return `Page${this.componentId}`
+      return `Page9`
+      // return `Page${this.componentId}`
     }
   },
   methods:{
