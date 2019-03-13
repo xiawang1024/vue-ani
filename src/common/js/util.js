@@ -13,12 +13,13 @@ const isWeChatBrowser = () => {
  * 移动端自动播放
  * @param {*} id 
  */
-const audioAutoPlay = (id = 'bgm') => {
-	let audio = document.getElementById(id)
+const audioAutoPlay = (id) => {
+	let audio = document.getElementById(id),
+		play = function() {
+			audio.play()
+			document.removeEventListener('touchstart', play, false)
+		}
 
-	const play = () => {
-		audio.play()
-	}
 	document.addEventListener(
 		'WeixinJSBridgeReady',
 		function() {
