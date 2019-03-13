@@ -1,165 +1,35 @@
 <template>
   <div id="app">
-    <Home v-on:startHandler="startHandler" v-show="!isShow" />
-    <transition name="fade">
-      <component ref="screen" v-show="isShow" :is="componentName"></component>
-    </transition>
-    <loading v-show="isLoading"></loading>
-    <transition name="fade">
-      <save-img v-show="isShowImg" :src="src" @againHandler="againHandler" @hideImgHandler="hideImgHandler"></save-img>
-    </transition>
+    <Index></Index>
   </div>
 </template>
 
 <script>
-import Loading from './base/Loading/Loading'
-import SaveImg from './base/SaveImg/SaveImg'
-import Home from './components/Home/Home.vue'
-import Page1 from './components/Page1/Page1.vue'
-import Page2 from './components/Page2/Page2.vue'
-import Page3 from './components/Page3/Page3.vue'
-import Page4 from './components/Page4/Page4.vue'
-import Page5 from './components/Page5/Page5.vue'
-import Page6 from './components/Page6/Page6.vue'
-import Page7 from './components/Page7/Page7.vue'
-import Page8 from './components/Page8/Page8.vue'
-import Page9 from './components/Page9/Page9.vue'
-
-const SRC_LIST =[
-        {},
-        {
-          src:require('./common/imgs/1.png'),
-          time:3000,
-        },
-        {
-          src:require('./common/imgs/2.png'),
-          time:8000,
-        },
-        {
-          src:require('./common/imgs/3.png'),
-          time:4500,
-        },
-        {
-          src:require('./common/imgs/4.png'),
-          time:5000,
-        },
-        {
-          src:require('./common/imgs/5.png'),
-          time:4500,
-        },
-        {
-          src:require('./common/imgs/6.png'),
-          time:4500,
-        },
-        {
-          src:require('./common/imgs/7.png'),
-          time:4000,
-        },
-        {
-          src:require('./common/imgs/8.png'),
-          time:4000,
-        },
-        {
-          src:require('./common/imgs/9.png'),
-          time:3500,
-        },
-      ]
-
+import Index from "views/Index";
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    Loading,
-    SaveImg,
-    Home,
-    Page1,
-    Page2,
-    Page3,
-    Page4,
-    Page5,
-    Page6,
-    Page7,
-    Page8,
-    Page9
-  },
-  data() {
-    return {
-      componentId:1,
-      isShow:false,
-      isLoading:false,
-      isShowImg:false,
-      srcList:SRC_LIST,
-      src:''
-    }
-  },
-  computed: {
-    componentName:function () {      
-      // return `Page9`
-      return `Page${this.componentId}`
-    }
-  },
-  methods:{
-    startHandler() {
-      this.isLoading = true;
-      let componentId = this.rand();
-      this.$nextTick(() => {
-        this.show(componentId)        
-      })
-    },
-    show(componentId) {
-      setTimeout(() => {
-        this.isLoading = false;
-        this.componentId = componentId;
-        this.isShow = true;
-        this.screenShot(componentId)
-      },1500)
-    },
-    rand(n = 27) {
-      // return 2
-      let randArr = [1,1,1,2,2,2,3,3,4,4,5,5,2,2,2,6,6,7,7,7,8,8,9,9,9,2,2,2]
-      let randId = (Math.floor(Math.random() * n));
-      let randNum = randArr[randId];
-      if(randNum === this.componentId) {
-        if(randNum === 1) {
-          randNum +=1;
-        } else {
-          randNum -=1;
-        }
-      }
-      return randNum ;
-    },
-    screenShot(componentId) {
-      this.src = this.srcList[componentId].src;
-      setTimeout(() => {
-        this.$nextTick(() => {
-          this.isShowImg = true;          
-        })
-      },this.srcList[componentId].time)
-    },
-    hideImgHandler(){
-      this.isShowImg = false; 
-    },
-    againHandler() {
-      setTimeout(() => {
-        this.isShowImg = false; 
-        this.isShow = false;
-      },0)
-    }
+    Index
   }
-}
+};
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #app {
+  width: 750px;
+  font-family: "PingFang SC", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  overflow: hidden; 
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .25s;
-  }
-  .fade-enter, .fade-leave-to  {
-    opacity: 0;
-  }
+  box-sizing: border-box;
+}
+.component-fade-enter-active,
+.component-fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+.component-fade-enter,
+.component-fade-leave-to {
+  opacity: 0;
 }
 </style>
