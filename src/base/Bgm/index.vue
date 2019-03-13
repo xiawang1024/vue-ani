@@ -8,7 +8,7 @@
       height="0"
       @play="bgmPlayHandler"
       @pause="bgmPauseHandler"
-      src="http://www.hndt.com/nh5/lianghui/2019/bgm.mp3"
+      src="http://www.hndt.com/nh5/lianghui/2019/stick/bgm.mp3"
     ></audio>
   </div>
 </template>
