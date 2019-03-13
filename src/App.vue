@@ -1,15 +1,18 @@
 <template>
   <div id="app">
     <Index></Index>
+    <Bgm></Bgm>
   </div>
 </template>
 
 <script>
 import Index from "views/Index";
+import Bgm from "base/Bgm/index.vue";
 export default {
   name: "app",
   components: {
-    Index
+    Index,
+    Bgm
   }
 };
 </script>
