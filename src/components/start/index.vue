@@ -1,9 +1,19 @@
 <template>
   <div class="start">
-    <div class="theme">
+    <div
+      class="theme ani"
+      swiper-animate-effect="flipInY"
+      swiper-animate-duration="1s"
+      swiper-animate-delay="0.25s"
+    >
       <div class="stick"></div>
     </div>
-    <arrow></arrow>
+    <arrow
+      class="ani"
+      swiper-animate-effect="fadeInUp"
+      swiper-animate-duration="0.75s"
+      swiper-animate-delay="0s"
+    ></arrow>
   </div>
 </template>
 
@@ -19,15 +29,15 @@ export default {
 <style lang="scss" scoped>
 @keyframes stickRotate {
   0% {
-    transform: rotate(-20deg);
+    transform: rotate(-15deg);
     transform-origin: bottom center;
   }
   50% {
-    transform: rotate(20deg);
+    transform: rotate(15deg);
     transform-origin: bottom center;
   }
   100% {
-    transform: rotate(-20deg);
+    transform: rotate(-15deg);
     transform-origin: bottom center;
   }
 }

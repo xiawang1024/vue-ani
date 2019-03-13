@@ -9,6 +9,11 @@ import 'common/scss/index.scss'
 import 'weChat/index'
 
 /**
+ * animate.css
+ */
+import 'animate.css'
+
+/**
  * fastclick 修复移动端点击延迟300ms
  */
 import fastclick from 'fastclick'

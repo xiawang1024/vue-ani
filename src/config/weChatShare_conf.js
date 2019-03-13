@@ -5,7 +5,7 @@ const baseURL = 'http://www.hndt.com/nh5/lianghui/2019'
  */
 const appId = 'wxbf02a07137a4e2d3'
 const shareLink = `${baseURL}/index.html`
-const shareTitle = 'H5三部曲之"听"两会丨声临其境！河南广播电视台邀您收听两会好声音'
+const shareTitle = '一根山药的海外“漂流”'
 const shareDesc = '河南广播电视台特别策划'
 const shareImg = `${baseURL}/icon-share.png`
 

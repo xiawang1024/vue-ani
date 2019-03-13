@@ -1,6 +1,11 @@
 <template>
   <div class="end">
-    <div class="copy"></div>
+    <div
+      class="copy ani"
+      swiper-animate-effect="flipInX"
+      swiper-animate-duration="0.75s"
+      swiper-animate-delay="0.25s"
+    ></div>
   </div>
 </template>
 

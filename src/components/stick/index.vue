@@ -1,19 +1,122 @@
 <template>
   <div :class="generateClass">
     <div class="road"></div>
-    <div class="stick">
-      <div class="stick-text"></div>
+    <div
+      v-if="stickIndex == 7"
+      class="stick ani"
+      swiper-animate-effect="fadeIn"
+      swiper-animate-duration="0.5s"
+      swiper-animate-delay="1.25s"
+    >
+      <div
+        v-if="stickIndex == 1"
+        class="stick-text ani"
+        swiper-animate-effect="zoomIn"
+        swiper-animate-duration="0.5s"
+        swiper-animate-delay="0.5s"
+      ></div>
+      <div
+        v-else
+        class="stick-text ani"
+        swiper-animate-effect="zoomIn"
+        swiper-animate-duration="0.5s"
+        swiper-animate-delay="1s"
+      ></div>
     </div>
-    <div class="tips-1">
-      <div class="tips-1-2"></div>
+    <div
+      v-else
+      class="stick ani"
+      swiper-animate-effect="fadeIn"
+      swiper-animate-duration="0.5s"
+      swiper-animate-delay="0.25s"
+    >
+      <div
+        v-if="stickIndex == 2"
+        class="stick-text ani"
+        swiper-animate-effect="zoomIn"
+        swiper-animate-duration="0.5s"
+        swiper-animate-delay="0.5s"
+      ></div>
+      <div
+        v-else
+        class="stick-text ani"
+        swiper-animate-effect="zoomIn"
+        swiper-animate-duration="0.5s"
+        swiper-animate-delay="1s"
+      ></div>
+    </div>
+    <div
+      v-if="stickIndex == 4"
+      class="tips-1 ani"
+      swiper-animate-effect="fadeInRight"
+      swiper-animate-duration="0.75s"
+      swiper-animate-delay="0.5s"
+    >
+      <div
+        class="tips-1-2 ani"
+        swiper-animate-effect="zoomIn"
+        swiper-animate-duration="0.5s"
+        swiper-animate-delay="0s"
+      ></div>
+    </div>
+    <div
+      v-else-if="stickIndex == 7"
+      class="tips-1 ani"
+      swiper-animate-effect="fadeIn"
+      swiper-animate-duration="0.75s"
+      swiper-animate-delay="0.25s"
+    >
+      <div
+        class="tips-1-2 ani"
+        swiper-animate-effect="fadeIn"
+        swiper-animate-duration="0.5s"
+        swiper-animate-delay="0.75s"
+      ></div>
+    </div>
+    <div
+      v-else-if="stickIndex == 3"
+      class="tips-1 ani"
+      swiper-animate-effect="fadeInLeft"
+      swiper-animate-duration="0.75s"
+      swiper-animate-delay="0.5s"
+    >
+      <div
+        class="tips-1-2 ani"
+        swiper-animate-effect="zoomIn"
+        swiper-animate-duration="0.5s"
+        swiper-animate-delay="0s"
+      ></div>
+    </div>
+    <div
+      v-else
+      class="tips-1 ani"
+      swiper-animate-effect="fadeIn"
+      swiper-animate-duration="0.75s"
+      swiper-animate-delay="0.5s"
+    >
+      <div class="tips-1-2 icon-6"></div>
     </div>
 
-    <div class="title"></div>
+    <div
+      v-if="stickIndex == 8"
+      class="title ani"
+      swiper-animate-effect="fadeIn"
+      swiper-animate-duration="0.5s"
+      swiper-animate-delay="0.25s"
+    ></div>
+    <div
+      v-else
+      class="title ani"
+      swiper-animate-effect="fadeIn"
+      swiper-animate-duration="0.75s"
+      swiper-animate-delay="1.75s"
+    ></div>
   </div>
 </template>
 
 
 <script>
+import { animate_2 } from "./animate/index.js";
 export default {
   name: "stickWrap",
   props: {
@@ -37,6 +140,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .stick-wrap {
   position: relative;
   width: 100%;
@@ -131,6 +245,7 @@ export default {
     }
     .stick {
       position: absolute;
+      z-index: 1;
       top: 355px;
       left: 0;
       width: 452px;
@@ -139,7 +254,7 @@ export default {
       background-size: cover;
       &-text {
         position: absolute;
-        z-index: 5;
+        z-index: 15;
         top: 280px;
         left: 230px;
         width: 362px;
@@ -253,6 +368,9 @@ export default {
         height: 135px;
         background: url("./imgs/6/icon-6-tips-2.png") center center no-repeat;
         background-size: cover;
+        &.icon-6 {
+          animation: flash 1s linear infinite;
+        }
       }
     }
     .title {
