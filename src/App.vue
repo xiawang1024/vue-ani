@@ -25,7 +25,7 @@ export default {
   left: 0;
   bottom: 0;
   width: 750px;
-  height: 1334px;
+  height: 100%;
   margin: auto;
   font-family: "PingFang SC", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

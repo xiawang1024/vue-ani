@@ -48,7 +48,7 @@ export default {
 
   .theme {
     position: absolute;
-    top: 280px;
+    top: 220px;
     left: 123px;
     width: 492px;
     height: 710px;

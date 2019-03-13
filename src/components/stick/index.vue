@@ -188,11 +188,11 @@ export default {
     .road {
       position: absolute;
       left: 0;
-      bottom: 0;
+      top: 0;
       width: 100%;
       height: 1334px;
       background: url("./imgs/3/icon-3-road.png") center bottom no-repeat;
-      background-size: contain;
+      background-size: cover;
     }
     .stick {
       position: absolute;
@@ -225,7 +225,7 @@ export default {
     .title {
       position: absolute;
       left: 70px;
-      top: 808px;
+      bottom: 40px;
       width: 607px;
       height: 436px;
       background: url("./imgs/3/icon-3-title.png") center center no-repeat;
@@ -235,17 +235,17 @@ export default {
   &-4 {
     .road {
       position: absolute;
-      z-index: 2;
+      z-index: 1;
       left: 0;
       bottom: 0;
       width: 100%;
       height: 1024px;
       background: url("./imgs/4/icon-4-road.png") center bottom no-repeat;
-      background-size: contain;
+      background-size: cover;
     }
     .stick {
       position: absolute;
-      z-index: 1;
+      z-index: 10;
       top: 355px;
       left: 0;
       width: 452px;
@@ -268,7 +268,7 @@ export default {
       position: absolute;
       z-index: 10;
       right: 0;
-      bottom: 30px;
+      bottom: 5px;
       width: 457px;
       height: 418px;
       background: url("./imgs/4/icon-4-tips-1.png") center center no-repeat;
@@ -293,7 +293,7 @@ export default {
       width: 100%;
       height: 754px;
       background: url("./imgs/5/icon-5-road.png") center bottom no-repeat;
-      background-size: contain;
+      background-size: cover;
     }
     .stick {
       position: absolute;
@@ -435,7 +435,7 @@ export default {
     }
     .title {
       position: absolute;
-      top: 162px;
+      top: 120px;
       left: 72px;
       width: 607px;
       height: 1011px;
