@@ -16,7 +16,14 @@ export default {
 
 <style lang="scss">
 #app {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
   width: 750px;
+  height: 1334px;
+  margin: auto;
   font-family: "PingFang SC", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

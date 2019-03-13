@@ -4,6 +4,30 @@
       <swiper-slide class="swiper">
         <start></start>
       </swiper-slide>
+      <swiper-slide class="swiper">
+        <Stick stickIndex="2"></Stick>
+      </swiper-slide>
+      <swiper-slide class="swiper">
+        <Stick stickIndex="3"></Stick>
+      </swiper-slide>
+      <swiper-slide class="swiper">
+        <Stick stickIndex="4"></Stick>
+      </swiper-slide>
+      <swiper-slide class="swiper">
+        <Stick stickIndex="5"></Stick>
+      </swiper-slide>
+      <swiper-slide class="swiper">
+        <Stick stickIndex="6"></Stick>
+      </swiper-slide>
+      <swiper-slide class="swiper">
+        <Stick stickIndex="7"></Stick>
+      </swiper-slide>
+      <swiper-slide class="swiper">
+        <Stick stickIndex="8"></Stick>
+      </swiper-slide>
+      <swiper-slide class="swiper">
+        <end></end>
+      </swiper-slide>
     </swiper>
   </div>
 </template>
@@ -20,13 +44,17 @@ import { swiperAnimateCache, swiperAnimate } from "common/js/swiper.animate.js";
  * 页面组件引入
  */
 import Start from "components/start/index.vue";
+import End from "components/end/index.vue";
+import Stick from "components/stick/index.vue";
 
 export default {
   name: "app",
   components: {
     swiper,
     swiperSlide,
-    Start
+    Start,
+    End,
+    Stick
   },
   data() {
     return {
@@ -50,10 +78,14 @@ export default {
 
 <style lang="scss" scoped>
 .index {
+  position: relative;
   width: 100%;
+  height: 100%;
   .swiper-wrap {
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    background: url("../../common/imgs/icon-bg.png") center center no-repeat;
+    background-size: cover;
   }
 }
 </style>
