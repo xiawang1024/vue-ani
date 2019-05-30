@@ -116,16 +116,9 @@
 
 
 <script>
-import { animate_2 } from "./animate/index.js";
 export default {
   name: "stickWrap",
   props: {
-    // stickData: {
-    //   type: Object,
-    //   default: () => {
-    //     return {};
-    //   }
-    // },
     stickIndex: {
       type: String,
       default: "2"
