@@ -1,5 +1,6 @@
 @mixin border-1px($color) {
     position: relative;
+
     &::after {
         display: block;
         position: absolute;
@@ -12,11 +13,13 @@
 }
 
 @mixin clearfix {
+
     &:before,
     &:after {
         content: '';
         display: table
     }
+
     &:after {
         clear: both;
         overflow: hidden;
@@ -33,6 +36,7 @@
 
 @svg border {
     height: 2px;
+
     @rect {
         fill: var(--color, black);
         width: 100%;
@@ -40,12 +44,12 @@
     }
 }
 
-@mixin tp-1px( $color) {
+@mixin tp-1px($color) {
     border-top: 1px solid rgba(0, 0, 0, 0.5);
     border-image: svg(border param(--color $color)) 2 2 stretch
 }
 
-@mixin bt-1px( $color) {
+@mixin bt-1px($color) {
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
     border-image: svg(border param(--color $color)) 2 2 stretch
 }
@@ -65,6 +69,7 @@
 
 @mixin extend-click() {
     position: relative;
+
     &::before {
         content: '';
         position: absolute;
@@ -72,5 +77,14 @@
         left: -20px;
         right: -20px;
         bottom: -20px;
+    }
+}
+
+
+@mixin bg($url) {
+    background-image: url($url);
+
+    @at-root (with: all) .webps & {
+        background-image: url($url + '.webp');
     }
 }

@@ -4,14 +4,39 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="shortcut icon" href="https://a.weixin.hndt.com/boom/favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta http-equiv="x-dns-prefetch-control" content="on" />
+  <meta name="keywords" content="河南广播电视台，河南广播电视台教育广播，花样少年，传大凤凰，凤凰教育，中国文化管理协会考级委员会">
+  <meta name="description" content="第五届花样少年全国青少年语言艺术展演网络人气评选">
   <link rel="icon" href="<%= BASE_URL %>favicon.ico">
   <title>H5三部曲之“画”两会丨一根山药的海外“漂流”</title>
+  <script>
+    (function (doc) {
+      function addRootTag() {
+        doc.documentElement.className += "webps";
+      }
+      if (!/(^|;\s?)webps=A/.test(document.cookie)) {
+        var image = new Image();
+        image.onload = function () {
+          if (image.width == 1) {
+            addRootTag();
+            document.cookie =
+              "webps=A; max-age=31536000; domain=hndt.com";
+          }
+        };
+        // 一张支持alpha透明度的webp的图片，使用base64编码
+        image.src =
+          "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==";
+      } else {
+        addRootTag();
+      }
+    })(document);
+  </script>
   <style>
-    #app{
+    #app {
       text-align: center;
     }
+
     .lds-roller {
       margin-top: 200px;
       display: inline-block;
