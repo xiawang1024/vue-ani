@@ -74,16 +74,19 @@ export default {
   top: $top;
   right: $top;
   $width: 50px;
+  $height: 76px;
   width: $width;
-  height: $width;
+  height: $height;
   &-play {
-    animation: rotate360 2.5s linear infinite;
-    background: url("./icon-bgm-play.png") center center no-repeat;
-    background-size: cover;
+    // animation: rotate360 2.5s linear infinite;
+    background: url("http://www.hndt.com/nh5/xinwen/20190531/imgs/cd-on.png")
+      center center no-repeat;
+    background-size: contain;
   }
   &-pause {
-    background: url("./icon-bgm-pause.png") center center no-repeat;
-    background-size: cover;
+    background: url("http://www.hndt.com/nh5/xinwen/20190531/imgs/cd-off.png")
+      center center no-repeat;
+    background-size: contain;
   }
 }
 </style>

@@ -2,17 +2,20 @@
   <div id="app">
     <Index></Index>
     <Bgm></Bgm>
+    <Arrow/>
   </div>
 </template>
 
 <script>
 import Index from "views/Index";
 import Bgm from "base/Bgm/index.vue";
+import Arrow from "base/Arrow/index.vue";
 export default {
   name: "app",
   components: {
     Index,
-    Bgm
+    Bgm,
+    Arrow
   }
 };
 </script>
