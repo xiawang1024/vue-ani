@@ -6,7 +6,7 @@ const baseURL = "http://www.hndt.com/nh5/xinwen/20190531/html";
 const appId = "wx5f789dea59c6c2c5";
 const shareLink = `${baseURL}/index.html`;
 const shareTitle = "2019“高考便利贴”， 考生请查收！";
-const shareDesc = "2019“高考便利贴”， 考生请查收！";
+const shareDesc = "经历了汗水洗礼，才更懂得收获的喜悦！祝所有考生金榜题名！";
 const shareImg = `http://www.hndt.com/nh5/xinwen/20190531/imgs/icon-share.png`;
 
 export { appId, shareLink, shareTitle, shareDesc, shareImg };
