@@ -2,31 +2,13 @@
   <div class="index">
     <swiper :options="swiperOption" ref="mySwiper" class="swiper-wrap">
       <swiper-slide class="swiper">
-        <start></start>
+        <Scenes :index="1"/>
       </swiper-slide>
       <swiper-slide class="swiper">
-        <Stick stickIndex="2"></Stick>
+        <Scenes :index="2"/>
       </swiper-slide>
       <swiper-slide class="swiper">
-        <Stick stickIndex="3"></Stick>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <Stick stickIndex="4"></Stick>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <Stick stickIndex="5"></Stick>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <Stick stickIndex="6"></Stick>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <Stick stickIndex="7"></Stick>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <Stick stickIndex="8"></Stick>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <end></end>
+        <Scenes :index="3"/>
       </swiper-slide>
     </swiper>
   </div>
@@ -43,18 +25,16 @@ import * as swiperAni from "common/js/swiper.animate.js";
 /**
  * 页面组件引入
  */
-import Start from "components/start/index.vue";
-import End from "components/end/index.vue";
-import Stick from "components/stick/index.vue";
+
+import Scenes from "components/Scenes/index.vue";
 
 export default {
   name: "app",
   components: {
     swiper,
     swiperSlide,
-    Start,
-    End,
-    Stick
+
+    Scenes
   },
   data() {
     return {
@@ -84,8 +64,6 @@ export default {
   .swiper-wrap {
     width: 100%;
     height: 100%;
-    background: url("../../common/imgs/icon-bg.png") center center no-repeat;
-    background-size: cover;
   }
 }
 </style>
