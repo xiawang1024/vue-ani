@@ -1,8 +1,18 @@
 <template>
   <div :class="generateClass">
     <div class="label"></div>
-    <div class="text"></div>
-    <div class="pic"></div>
+    <div
+      class="text ani"
+      swiper-animate-effect="zoomIn"
+      swiper-animate-duration="0.5s"
+      swiper-animate-delay="0.25s"
+    ></div>
+    <div
+      class="pic ani"
+      swiper-animate-effect="fadeIn"
+      swiper-animate-duration="0.5s"
+      swiper-animate-delay="0.5s"
+    ></div>
   </div>
 </template>
 <script>

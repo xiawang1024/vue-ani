@@ -1,6 +1,11 @@
 <template>
   <div :class="generateClass">
-    <div class="pic"></div>
+    <div
+      class="pic ani"
+      swiper-animate-effect="fadeInUp"
+      swiper-animate-duration="0.75s"
+      swiper-animate-delay="0s"
+    ></div>
   </div>
 </template>
 
