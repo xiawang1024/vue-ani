@@ -65,7 +65,7 @@ export default {
   }
   &-1 {
     .text {
-      height: 107px;
+      height: 162px;
       background: url("http://www.hndt.com/nh5/xinwen/20190531/imgs/scene-text-1.png")
         center center no-repeat;
       background-size: contain;
@@ -92,7 +92,7 @@ export default {
       @include bg(
         "http://www.hndt.com/nh5/xinwen/20190531/imgs/scene-pic-2.png"
       );
-      background-position: center center;
+      background-position: left center;
       background-repeat: no-repeat;
       background-size: contain;
     }
@@ -109,7 +109,7 @@ export default {
       @include bg(
         "http://www.hndt.com/nh5/xinwen/20190531/imgs/scene-pic-3.png"
       );
-      background-position: center center;
+      background-position: left center;
       background-repeat: no-repeat;
       background-size: contain;
     }
