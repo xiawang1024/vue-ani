@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-21 15:01:38
- * @LastEditTime: 2019-08-21 17:58:18
+ * @LastEditTime: 2019-08-21 18:12:14
  -->
 <template>
   <div class="poker">
@@ -50,8 +50,22 @@ export default {
     padding: 80px 25px 0;
     box-sizing: border-box;
     .item {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
+  }
+  .rank-btn {
+    margin-top: 10px;
+    width: 200px;
+    height: 60px;
+    border: 2 solid #ffeab0;
+    border-radius: 20px;
+    font-size: 28px;
+    color: #ffeab0;
+    background: none;
+    outline: none;
+    appearance: none;
+    user-select: none;
+    box-sizing: border-box;
   }
 }
 </style>
