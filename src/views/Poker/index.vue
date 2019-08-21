@@ -4,15 +4,28 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-21 15:01:38
- * @LastEditTime: 2019-08-21 16:23:58
+ * @LastEditTime: 2019-08-21 17:47:36
  -->
 <template>
-  <div class="poker"></div>
+  <div class="poker">
+    <div class="item-wrap">
+      <PokerItem class="item" v-for="item of pokerList" :key="item.id" :index="item.id"></PokerItem>
+    </div>
+    <button class="rank-btn">地标排行榜</button>
+  </div>
 </template>
 
 <script>
+import PokerItem from 'components/3dPoker/index'
+import dataList from './data'
 export default {
-  name: 'poker'
+  name: 'poker',
+  components: { PokerItem },
+  data() {
+    return {
+      pokerList: dataList
+    }
+  }
 }
 </script>
 
@@ -26,5 +39,16 @@ export default {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  .item-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    padding: 80px 25px 0;
+    box-sizing: border-box;
+    .item {
+      margin-bottom: 40px;
+    }
+  }
 }
 </style>

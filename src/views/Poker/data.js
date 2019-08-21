@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-21 16:30:22
- * @LastEditTime: 2019-08-21 16:52:34
+ * @LastEditTime: 2019-08-21 17:43:40
  */
 const dataList = [
     {
@@ -72,3 +72,6 @@ const dataList = [
         desc: `1951年，一座<span class='number'>21</span>米高的木制纪念塔在郑州二七广场矗立起来。1971年夏天，一场风雨过后，屹立了20年的木塔倒塌。1971年9月29日, 新的二七塔落成, 塔全高<span class='number'>63</span>米，共<span class='number'>14</span>层：双身并联式塔身，象证在这里牺牲的两位烈士；双塔平面南北角对角线净长7米，寓意着`
     }
 ]
+
+
+export default dataList
