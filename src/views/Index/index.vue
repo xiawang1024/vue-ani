@@ -4,13 +4,16 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-03-13 10:18:37
- * @LastEditTime: 2019-08-21 16:02:40
+ * @LastEditTime: 2019-08-21 16:24:26
  -->
 <template>
   <div class="index">
     <swiper :options="swiperOption" ref="mySwiper" class="swiper-wrap">
       <swiper-slide class="swiper">
         <Home></Home>
+      </swiper-slide>
+      <swiper-slide class="swiper">
+        <Poker></Poker>
       </swiper-slide>
     </swiper>
   </div>
@@ -28,6 +31,7 @@ import * as swiperAni from "common/js/swiper.animate.js";
  * 页面组件引入
  */
 import Home from '../Home/index.vue'
+import Poker from '../Poker/index.vue'
 
 
 
@@ -36,7 +40,8 @@ export default {
   components: {
     swiper,
     swiperSlide,
-    Home
+    Home,
+    Poker
   },
   data() {
     return {

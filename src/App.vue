@@ -1,8 +1,19 @@
+<!--
+ * @Description: app
+ * @Version: 0.0.1
+ * @Company: hNdt
+ * @Author: xiaWang1024
+ * @Date: 2019-03-13 08:54:36
+ * @LastEditTime: 2019-08-21 16:29:14
+ -->
 <template>
   <div id="app">
-    <Index></Index>
-    <Bgm></Bgm>
-    <Arrow/>
+    <!-- <Index></Index> -->
+    <!-- <Bgm></Bgm> -->
+    <Arrow />
+    <transition name="component-fade" mode="out-in">
+      <router-view />
+    </transition>
   </div>
 </template>
 
@@ -39,10 +50,10 @@ export default {
 }
 .component-fade-enter-active,
 .component-fade-leave-active {
-  transition: opacity 0.2s ease;
+  transition: opacity 0.1s ease;
 }
-.component-fade-enter,
-.component-fade-leave-to {
+.component-fade-enter, .component-fade-leave-to
+/* .component-fade-leave-active for below version 2.1.8 */ {
   opacity: 0;
 }
 </style>
