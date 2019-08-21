@@ -1,44 +1,16 @@
+<!--
+ * @Description: 
+ * @Version: 0.0.1
+ * @Company: hNdt
+ * @Author: xiaWang1024
+ * @Date: 2019-03-13 10:18:37
+ * @LastEditTime: 2019-08-21 16:02:40
+ -->
 <template>
   <div class="index">
     <swiper :options="swiperOption" ref="mySwiper" class="swiper-wrap">
       <swiper-slide class="swiper">
-        <Scenes :index="1"/>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <ColleExam :index="2"/>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <ColleExam :index="3"/>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <ColleExam :index="4"/>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <ColleExam :index="5"/>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <ColleExam :index="6"/>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <Scenes :index="2"/>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <ColleExam :index="7"/>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <ColleExam :index="8"/>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <ColleExam :index="9"/>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <Scenes :index="3"/>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <ColleExam :index="10"/>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <ColleExam :index="11"/>
+        <Home></Home>
       </swiper-slide>
     </swiper>
   </div>
@@ -55,17 +27,16 @@ import * as swiperAni from "common/js/swiper.animate.js";
 /**
  * 页面组件引入
  */
+import Home from '../Home/index.vue'
 
-import Scenes from "components/Scenes/index.vue";
-import ColleExam from "components/ColleExam/index.vue";
+
 
 export default {
   name: "app",
   components: {
     swiper,
     swiperSlide,
-    Scenes,
-    ColleExam
+    Home
   },
   data() {
     return {
