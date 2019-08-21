@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-21 15:01:38
- * @LastEditTime: 2019-08-21 17:47:36
+ * @LastEditTime: 2019-08-21 17:58:18
  -->
 <template>
   <div class="poker">
@@ -16,16 +16,19 @@
 </template>
 
 <script>
+import shuffle from 'lodash.shuffle'
 import PokerItem from 'components/3dPoker/index'
 import dataList from './data'
 export default {
   name: 'poker',
   components: { PokerItem },
-  data() {
-    return {
-      pokerList: dataList
+
+  computed: {
+    pokerList: function () {
+      return shuffle(dataList)
     }
-  }
+  },
+
 }
 </script>
 
