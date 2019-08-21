@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-21 15:01:38
- * @LastEditTime: 2019-08-21 18:12:14
+ * @LastEditTime: 2019-08-21 18:35:00
  -->
 <template>
   <div class="poker">
@@ -12,16 +12,18 @@
       <PokerItem class="item" v-for="item of pokerList" :key="item.id" :index="item.id"></PokerItem>
     </div>
     <button class="rank-btn">地标排行榜</button>
+    <Toast></Toast>
   </div>
 </template>
 
 <script>
 import shuffle from 'lodash.shuffle'
 import PokerItem from 'components/3dPoker/index'
+import Toast from 'components/toast/index'
 import dataList from './data'
 export default {
   name: 'poker',
-  components: { PokerItem },
+  components: { PokerItem, Toast },
 
   computed: {
     pokerList: function () {

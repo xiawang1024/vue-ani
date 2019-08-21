@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-21 16:55:58
- * @LastEditTime: 2019-08-21 17:42:56
+ * @LastEditTime: 2019-08-21 18:34:37
  -->
 <template>
   <div :class="hoverClass">
@@ -20,8 +20,10 @@
 </template>
 
 <script>
+
 export default {
   name: 'pokerItem',
+
   data() {
     return {
       isHover: false
