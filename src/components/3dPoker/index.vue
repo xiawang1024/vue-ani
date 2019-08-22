@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-21 16:55:58
- * @LastEditTime: 2019-08-22 14:53:33
+ * @LastEditTime: 2019-08-22 18:02:13
  -->
 <template>
   <div :class="hoverClass">
@@ -103,55 +103,73 @@ export default {
       //自定義
 
       &-1 {
-        @include bg("http://www.hndt.com/nh5/hndt/20190821/imgs/page-1.png");
+        @include bg(
+          "http://www.hndt.com/nh5/hndt/20190821/imgs/page-1-lite.png"
+        );
         background-position: center center;
         background-repeat: no-repeat;
         background-size: contain;
       }
       &-2 {
-        @include bg("http://www.hndt.com/nh5/hndt/20190821/imgs/page-2.png");
+        @include bg(
+          "http://www.hndt.com/nh5/hndt/20190821/imgs/page-2-lite.png"
+        );
         background-position: center center;
         background-repeat: no-repeat;
         background-size: contain;
       }
       &-3 {
-        @include bg("http://www.hndt.com/nh5/hndt/20190821/imgs/page-3.png");
+        @include bg(
+          "http://www.hndt.com/nh5/hndt/20190821/imgs/page-3-lite.png"
+        );
         background-position: center center;
         background-repeat: no-repeat;
         background-size: contain;
       }
       &-4 {
-        @include bg("http://www.hndt.com/nh5/hndt/20190821/imgs/page-4.png");
+        @include bg(
+          "http://www.hndt.com/nh5/hndt/20190821/imgs/page-4-lite.png"
+        );
         background-position: center center;
         background-repeat: no-repeat;
         background-size: contain;
       }
       &-5 {
-        @include bg("http://www.hndt.com/nh5/hndt/20190821/imgs/page-5.png");
+        @include bg(
+          "http://www.hndt.com/nh5/hndt/20190821/imgs/page-5-lite.png"
+        );
         background-position: center center;
         background-repeat: no-repeat;
         background-size: contain;
       }
       &-6 {
-        @include bg("http://www.hndt.com/nh5/hndt/20190821/imgs/page-6.png");
+        @include bg(
+          "http://www.hndt.com/nh5/hndt/20190821/imgs/page-6-lite.png"
+        );
         background-position: center center;
         background-repeat: no-repeat;
         background-size: contain;
       }
       &-7 {
-        @include bg("http://www.hndt.com/nh5/hndt/20190821/imgs/page-7.png");
+        @include bg(
+          "http://www.hndt.com/nh5/hndt/20190821/imgs/page-7-lite.png"
+        );
         background-position: center center;
         background-repeat: no-repeat;
         background-size: contain;
       }
       &-8 {
-        @include bg("http://www.hndt.com/nh5/hndt/20190821/imgs/page-8.png");
+        @include bg(
+          "http://www.hndt.com/nh5/hndt/20190821/imgs/page-8-lite.png"
+        );
         background-position: center center;
         background-repeat: no-repeat;
         background-size: contain;
       }
       &-9 {
-        @include bg("http://www.hndt.com/nh5/hndt/20190821/imgs/page-8.png");
+        @include bg(
+          "http://www.hndt.com/nh5/hndt/20190821/imgs/page-8-lite.png"
+        );
         background-position: center center;
         background-repeat: no-repeat;
         background-size: contain;

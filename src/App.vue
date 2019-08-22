@@ -4,16 +4,15 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-03-13 08:54:36
- * @LastEditTime: 2019-08-22 11:53:13
+ * @LastEditTime: 2019-08-22 17:32:31
  -->
 <template>
   <div id="app">
     <!-- <Index></Index> -->
     <!-- <Bgm></Bgm> -->
     <Arrow />
-    <transition name="component-fade" mode="out-in">
-      <router-view />
-    </transition>
+    <!-- <transition name="fade" mode="out-in"></transition> -->
+    <router-view />
   </div>
 </template>
 
@@ -54,12 +53,11 @@ export default {
 .number {
   color: #c19c50;
 }
-.component-fade-enter-active,
-.component-fade-leave-active {
-  transition: opacity 0.1s ease;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.05s ease-in;
 }
-.component-fade-enter, .component-fade-leave-to
-/* .component-fade-leave-active for below version 2.1.8 */ {
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
 </style>

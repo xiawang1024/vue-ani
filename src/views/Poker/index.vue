@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-21 15:01:38
- * @LastEditTime: 2019-08-22 14:54:35
+ * @LastEditTime: 2019-08-22 16:43:51
  -->
 <template>
   <div class="poker">
@@ -18,7 +18,7 @@
         @secondClickHandler="secondClickHandler"
       ></PokerItem>
     </div>
-    <button class="rank-btn">地标排行榜</button>
+    <button class="rank-btn" @click="goToRank">地标排行榜</button>
     <Toast :isOpen="isOpen" :pokerId="pokerId" @closeHandler="closeHandler"></Toast>
   </div>
 </template>
@@ -59,6 +59,9 @@ export default {
     },
     closeHandler() {
       this.isOpen = false
+    },
+    goToRank() {
+      this.$router.push('/rank')
     }
   }
 
