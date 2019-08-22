@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-03-13 10:18:37
- * @LastEditTime: 2019-08-21 16:24:26
+ * @LastEditTime: 2019-08-22 10:22:49
  -->
 <template>
   <div class="index">
@@ -47,6 +47,7 @@ export default {
     return {
       swiperOption: {
         direction: "vertical",
+        noSwipingClass: 'J_scroll',
         // loop : true,
         on: {
           init() {
