@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-21 18:19:29
- * @LastEditTime: 2019-08-22 10:54:38
+ * @LastEditTime: 2019-08-22 10:56:39
  -->
 <template>
   <div class="toast">
@@ -88,6 +88,7 @@ export default {
         font-size: 36px;
         font-weight: bold;
         color: #c19c50;
+        user-select: none;
       }
       .zan {
         $size: 70px;
