@@ -4,21 +4,30 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-21 15:01:38
- * @LastEditTime: 2019-08-22 16:43:51
+ * @LastEditTime: 2019-08-22 18:33:10
  -->
 <template>
   <div class="poker">
     <div class="item-wrap">
       <PokerItem
-        class="item"
-        v-for="item of pokerList"
+        class="item ani"
+        swiper-animate-effect="fadeInLeft"
+        swiper-animate-duration="0.5s"
+        :swiper-animate-delay="animateDelay(index)"
+        v-for="(item,index) of pokerList"
         :key="item.id"
         :index="item.id"
         @clickPokerHandler="clickPokerHandler"
         @secondClickHandler="secondClickHandler"
       ></PokerItem>
     </div>
-    <button class="rank-btn" @click="goToRank">地标排行榜</button>
+    <button
+      class="rank-btn ani"
+      @click="goToRank"
+      swiper-animate-effect="fadeInDown"
+      swiper-animate-duration="0.5s"
+      :swiper-animate-delay="animateDelay(10)"
+    >地标排行榜</button>
     <Toast :isOpen="isOpen" :pokerId="pokerId" @closeHandler="closeHandler"></Toast>
   </div>
 </template>
@@ -62,6 +71,9 @@ export default {
     },
     goToRank() {
       this.$router.push('/rank')
+    },
+    animateDelay(index) {
+      return `${(index + 1) * 0.25}s`
     }
   }
 
