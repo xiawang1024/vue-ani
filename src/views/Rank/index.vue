@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-20 18:07:44
- * @LastEditTime: 2019-08-22 16:15:20
+ * @LastEditTime: 2019-08-22 16:38:38
  -->
 <template>
   <div class="rank">
@@ -13,19 +13,58 @@
         <div class="prize"></div>
       </div>
       <div class="main J_scroll">
-        <RankItem v-for="n of 12" :key="n"></RankItem>
+        <RankItem v-for="(item,index) of rankList" :key="item.id" :item="item" :rankIdx="index"></RankItem>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+
+const data = [
+  {
+    id: 1,
+    score: 1000,
+  },
+  {
+    id: 2,
+    score: 900,
+  },
+  {
+    id: 3,
+    score: 800,
+  },
+  {
+    id: 4,
+    score: 500,
+  }
+]
+
 import RankItem from 'components/rankItem/index.vue'
+import dataList from 'views/Poker/data.js'
 
 export default {
   name: "rank",
   components: {
     RankItem
+  },
+  data() {
+    return {
+      rankList: []
+    }
+  },
+  mounted() {
+    this.rankList = this.setDataList(data)
+  },
+  methods: {
+    setDataList(data) {
+      let newDataList = []
+      data.forEach(item => {
+        item.name = dataList[item.id - 1]['name']
+        newDataList.push(item)
+      });
+      return newDataList
+    }
   }
 };
 </script>

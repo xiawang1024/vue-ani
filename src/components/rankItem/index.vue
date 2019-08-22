@@ -4,28 +4,54 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-22 15:25:23
- * @LastEditTime: 2019-08-22 16:12:01
+ * @LastEditTime: 2019-08-22 16:41:23
  -->
 <template>
   <div class="rank-item">
     <div class="left">
-      <div class="prize prize-1"></div>
-      <div class="img img-1"></div>
+      <div :class="prizeClass"></div>
+      <div :class="imgClass"></div>
       <div class="text-wrap">
-        <h2 class="name">二七塔</h2>
+        <h2 class="name">{{item.name}}</h2>
         <Rate class="rate"></Rate>
       </div>
     </div>
-    <div class="number">999</div>
+    <div class="number">{{item.score}}</div>
   </div>
 </template>
 
 <script>
 import Rate from 'components/rate/index.vue'
+
+
 export default {
   name: 'rank-item',
   components: {
     Rate
+  },
+  props: {
+    item: {
+      type: Object,
+      default: () => {
+        return {
+          id: 1,
+          name: '',
+          score: ''
+        }
+      }
+    },
+    rankIdx: {
+      type: Number,
+      default: 0
+    }
+  },
+  computed: {
+    prizeClass: function () {
+      return `prize prize-${this.rankIdx + 1}`
+    },
+    imgClass: function () {
+      return `img img-${this.item.id}`
+    }
   }
 }
 </script>
