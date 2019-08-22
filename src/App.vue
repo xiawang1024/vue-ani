@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-03-13 08:54:36
- * @LastEditTime: 2019-08-21 16:29:14
+ * @LastEditTime: 2019-08-22 11:53:13
  -->
 <template>
   <div id="app">
@@ -47,6 +47,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   box-sizing: border-box;
+}
+.page-desc {
+  margin-bottom: 8px;
+}
+.number {
+  color: #c19c50;
 }
 .component-fade-enter-active,
 .component-fade-leave-active {

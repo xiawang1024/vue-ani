@@ -4,15 +4,21 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-21 15:01:38
- * @LastEditTime: 2019-08-21 18:35:00
+ * @LastEditTime: 2019-08-22 11:44:25
  -->
 <template>
   <div class="poker">
     <div class="item-wrap">
-      <PokerItem class="item" v-for="item of pokerList" :key="item.id" :index="item.id"></PokerItem>
+      <PokerItem
+        class="item"
+        v-for="item of pokerList"
+        :key="item.id"
+        :index="item.id"
+        @clickPokerHandler="clickPokerHandler"
+      ></PokerItem>
     </div>
     <button class="rank-btn">地标排行榜</button>
-    <Toast></Toast>
+    <Toast :isOpen="isOpen" :pokerId="pokerId" @closeHandler="closeHandler"></Toast>
   </div>
 </template>
 
@@ -24,12 +30,32 @@ import dataList from './data'
 export default {
   name: 'poker',
   components: { PokerItem, Toast },
-
+  data() {
+    return {
+      isOpen: false,
+      pokerId: 1
+    }
+  },
   computed: {
     pokerList: function () {
       return shuffle(dataList)
     }
   },
+  beforeDestroy() {
+    clearTimeout(this.timer)
+  },
+
+  methods: {
+    clickPokerHandler(id) {
+      this.pokerId = id
+      this.timer = setTimeout(() => {
+        this.isOpen = true
+      }, 750)
+    },
+    closeHandler() {
+      this.isOpen = false
+    }
+  }
 
 }
 </script>
@@ -56,10 +82,10 @@ export default {
     }
   }
   .rank-btn {
-    margin-top: 10px;
+    margin-top: 15px;
     width: 200px;
     height: 60px;
-    border: 2 solid #ffeab0;
+    border: 2px solid #ffeab0;
     border-radius: 20px;
     font-size: 28px;
     color: #ffeab0;

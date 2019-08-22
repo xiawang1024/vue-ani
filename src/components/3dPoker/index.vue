@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-21 16:55:58
- * @LastEditTime: 2019-08-21 18:34:37
+ * @LastEditTime: 2019-08-22 11:27:38
  -->
 <template>
   <div :class="hoverClass">
@@ -48,6 +48,7 @@ export default {
       if (!this.isHover) {
         this.isHover = true
       }
+      this.$emit('clickPokerHandler', this.index)
     },
 
   }

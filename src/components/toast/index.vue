@@ -4,26 +4,21 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-21 18:19:29
- * @LastEditTime: 2019-08-22 10:56:39
+ * @LastEditTime: 2019-08-22 11:45:16
  -->
 <template>
-  <div class="toast">
+  <div class="toast animated fadeIn" v-show="isOpen">
     <div class="content">
       <div class="head">
-        <h2 class="name">亚细亚/二七商圈</h2>
+        <h2 class="name">{{selectedData.name}}</h2>
         <div :class="zanClass" @click="zanHandler">
           <span v-show="isZan" class="add-one">+1</span>
         </div>
         <div class="tips"></div>
-        <div class="close"></div>
+        <div class="close" @click="closeHandler"></div>
       </div>
-      <div class="img img-5"></div>
-      <div class="text J_scroll">
-        郑州“大玉米”官方名称“千玺广场”，地下4层，地上60层，主楼高达280米，被称为“中原第一高楼”。“大玉米”楼的设计灵感来自中国现存最古老的砖塔——“嵩岳寺塔”，主楼曲线与“嵩岳寺塔”吻合，是位于郑州市郑东新区CBD的一座新地标建筑，这是郑东新区名片。
-        <br />郑东新区2003年破土动工，短短16年间，它已经从一片芦苇丛生的鱼塘洼地，变身为面积105平方公里、2017年固定资产投资802亿元、全口径财政收入255亿元、地方公共预算收入82亿元，位列全市第一，这是东区速度。
-        郑州“大玉米”官方名称“千玺广场”，地下4层，地上60层，主楼高达280米，被称为“中原第一高楼”。“大玉米”楼的设计灵感来自中国现存最古老的砖塔——“嵩岳寺塔”，主楼曲线与“嵩岳寺塔”吻合，是位于郑州市郑东新区CBD的一座新地标建筑，这是郑东新区名片。
-        <br />郑东新区2003年破土动工，短短16年间，它已经从一片芦苇丛生的鱼塘洼地，变身为面积105平方公里、2017年固定资产投资802亿元、全口径财政收入255亿元、地方公共预算收入82亿元，位列全市第一，这是东区速度。
-      </div>
+      <div :class="imgClass"></div>
+      <div class="text J_scroll" v-html="selectedData.desc"></div>
     </div>
   </div>
 </template>
@@ -37,14 +32,39 @@ export default {
       isZan: false
     }
   },
+  props: {
+    isOpen: {
+      type: Boolean,
+      default: false
+    },
+    pokerId: {
+      type: Number,
+      default: 1
+    }
+  },
   computed: {
     zanClass: function () {
       return this.isZan ? `zan zan-yes animated heartBeat` : `zan`
+    },
+    imgClass: function () {
+      return `img img-${this.pokerId}`
+    },
+    selectedData: function () {
+      let arr = dataList.filter(item => item.id === this.pokerId)
+      return arr[0]
     }
   },
   methods: {
     zanHandler() {
+      if (!this.isZan) {
+        //点赞 增加点赞数
+      } else {
+        // 取消点赞 减少点赞数
+      }
       this.isZan = !this.isZan
+    },
+    closeHandler() {
+      this.$emit('closeHandler')
     }
   }
 }
