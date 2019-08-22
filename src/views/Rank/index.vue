@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-20 18:07:44
- * @LastEditTime: 2019-08-22 16:43:04
+ * @LastEditTime: 2019-08-22 18:20:38
  -->
 <template>
   <div class="rank">
@@ -23,7 +23,7 @@
 // mock 数据
 const data = [
   {
-    id: 1,
+    id: 5,
     score: 1000,
   },
   {
@@ -35,8 +35,12 @@ const data = [
     score: 800,
   },
   {
-    id: 4,
+    id: 1,
     score: 500,
+  },
+  {
+    id: 4,
+    score: 300,
   }
 ]
 

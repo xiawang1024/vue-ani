@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-22 15:25:23
- * @LastEditTime: 2019-08-22 16:41:23
+ * @LastEditTime: 2019-08-22 18:19:49
  -->
 <template>
   <div class="rank-item">
@@ -13,7 +13,7 @@
       <div :class="imgClass"></div>
       <div class="text-wrap">
         <h2 class="name">{{item.name}}</h2>
-        <Rate class="rate"></Rate>
+        <Rate class="rate" :score="scoreToRate"></Rate>
       </div>
     </div>
     <div class="number">{{item.score}}</div>
@@ -36,7 +36,7 @@ export default {
         return {
           id: 1,
           name: '',
-          score: ''
+          score: 0
         }
       }
     },
@@ -51,6 +51,21 @@ export default {
     },
     imgClass: function () {
       return `img img-${this.item.id}`
+    },
+    scoreToRate() {
+      /**
+       * 点赞数爱心换算
+       */
+      switch (this.rankIdx) {
+        case 0:
+          return 6;
+        case 1:
+          return 5;
+        case 2:
+          return 4;
+        default:
+          return 3;
+      }
     }
   }
 }
