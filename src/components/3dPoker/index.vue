@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-21 16:55:58
- * @LastEditTime: 2019-08-22 11:27:38
+ * @LastEditTime: 2019-08-22 14:53:33
  -->
 <template>
   <div :class="hoverClass">
@@ -12,7 +12,7 @@
       <div class="front" @click="clickPokerHandler">
         <!-- front content -->
       </div>
-      <div :class="backClass">
+      <div :class="backClass" @click="secondClickHandler">
         <!-- back content -->
       </div>
     </div>
@@ -50,6 +50,9 @@ export default {
       }
       this.$emit('clickPokerHandler', this.index)
     },
+    secondClickHandler() {
+      this.$emit('secondClickHandler', this.index)
+    }
 
   }
 }

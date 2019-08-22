@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-21 15:01:38
- * @LastEditTime: 2019-08-22 11:44:25
+ * @LastEditTime: 2019-08-22 14:54:35
  -->
 <template>
   <div class="poker">
@@ -15,6 +15,7 @@
         :key="item.id"
         :index="item.id"
         @clickPokerHandler="clickPokerHandler"
+        @secondClickHandler="secondClickHandler"
       ></PokerItem>
     </div>
     <button class="rank-btn">地标排行榜</button>
@@ -51,6 +52,10 @@ export default {
       this.timer = setTimeout(() => {
         this.isOpen = true
       }, 750)
+    },
+    secondClickHandler(id) {
+      this.pokerId = id
+      this.isOpen = true
     },
     closeHandler() {
       this.isOpen = false
