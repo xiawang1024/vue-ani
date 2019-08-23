@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-20 18:07:44
- * @LastEditTime: 2019-08-22 18:20:38
+ * @LastEditTime: 2019-08-23 10:55:24
  -->
 <template>
   <div class="rank">
@@ -47,6 +47,8 @@ const data = [
 import RankItem from 'components/rankItem/index.vue'
 import dataList from 'views/Poker/data.js'
 
+import { getRankList } from '@api/index.js'
+
 export default {
   name: "rank",
   components: {
@@ -58,9 +60,17 @@ export default {
     }
   },
   mounted() {
-    this.rankList = this.setDataList(data)
+    this._getRankList()
   },
   methods: {
+    _getRankList() {
+      getRankList().then(res => {
+        let { code, result } = res.data
+        if (code === 0) {
+          this.rankList = this.setDataList(result)
+        }
+      })
+    },
     setDataList(data) {
       let newDataList = []
       data.forEach(item => {
@@ -115,6 +125,7 @@ export default {
     }
     .main {
       flex: 1;
+      padding-bottom: 30px;
       -webkit-overflow-scrolling: touch;
       overflow: auto;
     }
