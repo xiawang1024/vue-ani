@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-20 18:07:44
- * @LastEditTime: 2019-08-23 10:55:24
+ * @LastEditTime: 2019-08-23 10:57:00
  -->
 <template>
   <div class="rank">
@@ -20,29 +20,7 @@
 </template>
 
 <script>
-// mock 数据
-const data = [
-  {
-    id: 5,
-    score: 1000,
-  },
-  {
-    id: 2,
-    score: 900,
-  },
-  {
-    id: 3,
-    score: 800,
-  },
-  {
-    id: 1,
-    score: 500,
-  },
-  {
-    id: 4,
-    score: 300,
-  }
-]
+
 
 import RankItem from 'components/rankItem/index.vue'
 import dataList from 'views/Poker/data.js'

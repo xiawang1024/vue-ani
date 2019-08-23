@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-21 15:01:38
- * @LastEditTime: 2019-08-23 09:37:29
+ * @LastEditTime: 2019-08-23 11:07:12
  -->
 <template>
   <div class="poker">
@@ -40,51 +40,13 @@
 </template>
 
 <script>
-// mock数据
-
-const mockData = [
-  {
-    id: 1,
-    isZan: true
-  },
-  {
-    id: 2,
-    isZan: true
-  },
-  {
-    id: 3,
-    isZan: false
-  },
-  {
-    id: 4,
-    isZan: true
-  },
-  {
-    id: 5,
-    isZan: true
-  },
-  {
-    id: 6,
-    isZan: false
-  },
-  {
-    id: 7,
-    isZan: true
-  },
-  {
-    id: 8,
-    isZan: true
-  },
-  {
-    id: 9,
-    isZan: false
-  }
-]
 
 import shuffle from 'lodash.shuffle'
 import PokerItem from 'components/3dPoker/index'
 import Toast from 'components/toast/index'
 import dataList from './data'
+
+import { getZanStatusList, voteHandler } from '@api/index.js'
 
 export default {
   name: 'poker',
@@ -93,7 +55,8 @@ export default {
     return {
       isOpen: false,
       pokerId: 1,
-      isZan: false
+      isZan: false,
+      zanStatusList: []
     }
   },
   computed: {
@@ -105,7 +68,19 @@ export default {
     clearTimeout(this.timer)
   },
 
+  mounted() {
+    this._getZanStatusList()
+  },
+
   methods: {
+    _getZanStatusList() {
+      getZanStatusList().then(res => {
+        let { code, result } = res.data
+        if (code === 0) {
+          this.zanStatusList = result
+        }
+      })
+    },
     /**
      * 翻牌相关事件
      */
@@ -126,8 +101,7 @@ export default {
      * 根据地标id过滤点赞状态
      */
     filterIsZan(id) {
-      let arr = mockData.filter(item => item.id === id)
-      this.isZan = arr[0] && arr[0].isZan
+      this.isZan = this.zanStatusList.includes(id) ? true : false
     },
     /**
      * 关闭弹窗
@@ -140,6 +114,12 @@ export default {
      */
     zanYesHandler() {
       this.isZan = true
+      voteHandler(this.pokerId).then(res => {
+        let { code } = res.data
+        if (code === 0) {
+          this._getZanStatusList()
+        }
+      })
     },
     zanNoHandler() {
       // this.isZan = false
