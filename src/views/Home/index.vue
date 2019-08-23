@@ -4,18 +4,28 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-21 15:01:31
- * @LastEditTime: 2019-08-21 16:21:23
+ * @LastEditTime: 2019-08-23 11:22:09
  -->
 <template>
   <div class="home">
     <div class="title"></div>
-    <div class="logo"></div>
+    <div
+      class="logo ani"
+      swiper-animate-effect="fadeInDown"
+      swiper-animate-duration="0.75s"
+      swiper-animate-delay="0.5s"
+    ></div>
+    <Arrow></Arrow>
   </div>
 </template>
 
 <script>
+import Arrow from "base/Arrow/index.vue";
 export default {
-  name: 'home'
+  name: 'home',
+  components: {
+    Arrow
+  }
 }
 </script>
 
@@ -35,8 +45,8 @@ export default {
     left: 0;
     width: 100%;
     height: 795px;
-    // @include bg("http://www.hndt.com/nh5/hndt/20190821/imgs/title.png");
-    background-image: url("http://www.hndt.com/nh5/hndt/20190821/imgs/title.png");
+    @include bg("http://www.hndt.com/nh5/hndt/20190821/imgs/title.png");
+    // background-image: url("http://www.hndt.com/nh5/hndt/20190821/imgs/title.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;

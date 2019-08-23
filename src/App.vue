@@ -4,13 +4,13 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-03-13 08:54:36
- * @LastEditTime: 2019-08-22 17:32:31
+ * @LastEditTime: 2019-08-23 11:15:52
  -->
 <template>
   <div id="app">
     <!-- <Index></Index> -->
     <!-- <Bgm></Bgm> -->
-    <Arrow />
+    <!-- <Arrow /> -->
     <!-- <transition name="fade" mode="out-in"></transition> -->
     <router-view />
   </div>
@@ -19,13 +19,13 @@
 <script>
 import Index from "views/Index";
 import Bgm from "base/Bgm/index.vue";
-import Arrow from "base/Arrow/index.vue";
+// import Arrow from "base/Arrow/index.vue";
 export default {
   name: "app",
   components: {
     Index,
     Bgm,
-    Arrow
+    // Arrow
   }
 };
 </script>
