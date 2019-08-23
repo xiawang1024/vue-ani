@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-21 18:19:29
- * @LastEditTime: 2019-08-22 11:45:16
+ * @LastEditTime: 2019-08-23 09:28:53
  -->
 <template>
   <div class="toast animated fadeIn" v-show="isOpen">
@@ -12,7 +12,7 @@
       <div class="head">
         <h2 class="name">{{selectedData.name}}</h2>
         <div :class="zanClass" @click="zanHandler">
-          <span v-show="isZan" class="add-one">+1</span>
+          <span v-show="isShowAddOne" class="add-one">+1</span>
         </div>
         <div class="tips"></div>
         <div class="close" @click="closeHandler"></div>
@@ -29,10 +29,14 @@ export default {
   name: 'toast',
   data() {
     return {
-      isZan: false
+      isShowAddOne: false
     }
   },
   props: {
+    isZan: {
+      type: Boolean,
+      default: false
+    },
     isOpen: {
       type: Boolean,
       default: false
@@ -42,6 +46,7 @@ export default {
       default: 1
     }
   },
+
   computed: {
     zanClass: function () {
       return this.isZan ? `zan zan-yes animated heartBeat` : `zan`
@@ -58,13 +63,17 @@ export default {
     zanHandler() {
       if (!this.isZan) {
         //点赞 增加点赞数
+        this.isShowAddOne = true
+        this.$emit('zanYesHandler')
       } else {
         // 取消点赞 减少点赞数
+        this.$emit('zanNoHandler')
       }
-      this.isZan = !this.isZan
+
     },
     closeHandler() {
       this.$emit('closeHandler')
+      this.isShowAddOne = false
     }
   }
 }
