@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-21 15:01:38
- * @LastEditTime: 2019-08-23 09:30:27
+ * @LastEditTime: 2019-08-23 09:37:29
  -->
 <template>
   <div class="poker">
@@ -106,6 +106,9 @@ export default {
   },
 
   methods: {
+    /**
+     * 翻牌相关事件
+     */
     clickPokerHandler(id) {
       this.filterIsZan(id)
       this.pokerId = id
@@ -118,13 +121,23 @@ export default {
       this.pokerId = id
       this.isOpen = true
     },
+
+    /**
+     * 根据地标id过滤点赞状态
+     */
     filterIsZan(id) {
       let arr = mockData.filter(item => item.id === id)
       this.isZan = arr[0] && arr[0].isZan
     },
+    /**
+     * 关闭弹窗
+     */
     closeHandler() {
       this.isOpen = false
     },
+    /**
+     * 点赞相关事件
+     */
     zanYesHandler() {
       this.isZan = true
     },
@@ -132,9 +145,13 @@ export default {
       // this.isZan = false
       alert('请分享给更多人为地标打call')
     },
+    //跳转到地表排行榜
     goToRank() {
       this.$router.push('/rank')
     },
+    /**
+     * 动画延迟开始时间
+     */
     animateDelay(index) {
       return `${(index + 1) * 0.25}s`
     }
