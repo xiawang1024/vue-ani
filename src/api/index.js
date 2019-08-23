@@ -1,5 +1,16 @@
+/*
+ * @Description: api
+ * @Version: 0.0.1
+ * @Company: hNdt
+ * @Author: xiaWang1024
+ * @Date: 2019-03-04 10:45:55
+ * @LastEditTime: 2019-08-23 10:40:36
+ */
 import axios from 'axios'
 import Qs from 'qs'
+import store from 'store'
+import STORE_NAME from 'conf/store_conf'
+
 const NODE_ENV = process.env.NODE_ENV
 
 if (NODE_ENV === 'development') {
@@ -14,23 +25,25 @@ if (NODE_ENV === 'development') {
 	axios.defaults.baseURL = 'http://www.hndt.com'
 }
 
+
 /**
- * 获取类别的列表
- * @param {*} type 
+ * 获取排行榜列表
  */
-const getList = (type) =>
-	axios({
-		method: 'get',
-		url: `/zt/sheng/${type}/index.json`
-	})
+const getRankList = () => axios.get('/vote/list')
+
 /**
- * 获取正文
- * @param {*} url 
+ * 获取用户地标点赞状态列表
  */
-const getArticle = (url) => {
-	url = url.replace(/http:\/\/www.hndt.com/, '')
-	// console.log(url)
-	return axios({ method: 'get', url })
+const getZanStatusList = () => axios.get('')
+
+/**
+ * 
+ * @param {*} id 地标id
+ * @param {*} openId 微信openId
+ */
+const voteHandler = (id) => {
+	let { openid } = store.get(STORE_NAME)
+	return axios.post('/vote/voted', Qs.stringify({ id, openId: openid }))
 }
 
-export { getList, getArticle }
+export { getRankList, getZanStatusList, voteHandler }

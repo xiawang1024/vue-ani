@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-03-13 08:54:36
- * @LastEditTime: 2019-08-22 09:12:54
+ * @LastEditTime: 2019-08-23 10:21:01
  */
 const path = require('path')
 
@@ -35,7 +35,7 @@ module.exports = {
 	devServer: {
 		proxy: {
 			'/api': {
-				target: 'http://www.hndt.com/',
+				target: 'http://192.168.7.38:8090/',
 				ws: true,
 				changeOrigin: true,
 				pathRewrite: {
