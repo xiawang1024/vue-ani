@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-03-04 10:45:55
- * @LastEditTime: 2019-08-23 10:43:42
+ * @LastEditTime: 2019-08-29 11:47:24
  */
 /**
  * 引入基础样式
@@ -14,7 +14,7 @@ import 'common/scss/index.scss'
 /**
  * 微信相关：sdk配置
  */
-// import 'weChat/index'
+import 'weChat/index'
 
 /**
  * animate.css

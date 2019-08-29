@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-03-13 08:54:36
- * @LastEditTime: 2019-08-23 17:16:35
+ * @LastEditTime: 2019-08-29 11:44:32
  */
 const path = require('path')
 
@@ -35,7 +35,7 @@ module.exports = {
 	devServer: {
 		proxy: {
 			'/api': {
-				target: 'http://172.20.5.105:18090/',
+				target: 'http://hudong.hndt.com/wechatdibiao/',
 				ws: true,
 				changeOrigin: true,
 				pathRewrite: {
