@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-21 18:19:29
- * @LastEditTime: 2019-08-23 09:28:53
+ * @LastEditTime: 2019-08-30 09:53:40
  -->
 <template>
   <div class="toast animated fadeIn" v-show="isOpen">
@@ -213,8 +213,8 @@ export default {
         @include bg("http://www.hndt.com/nh5/hndt/20190821/imgs/page-8.png");
       }
       &-9 {
-        height: 431px;
-        @include bg("http://www.hndt.com/nh5/hndt/20190821/imgs/page-1.png");
+        height: 459px;
+        @include bg("http://www.hndt.com/nh5/hndt/20190821/imgs/page-9.png");
       }
     }
     .text {

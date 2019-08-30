@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-22 15:25:23
- * @LastEditTime: 2019-08-22 18:19:49
+ * @LastEditTime: 2019-08-30 10:10:04
  -->
 <template>
   <div class="rank-item">
@@ -132,7 +132,7 @@ export default {
         @include bg("http://www.hndt.com/nh5/hndt/20190821/imgs/p-8.png");
       }
       &-9 {
-        @include bg("http://www.hndt.com/nh5/hndt/20190821/imgs/p-1.png");
+        @include bg("http://www.hndt.com/nh5/hndt/20190821/imgs/p-9.png");
       }
     }
     .text-wrap {

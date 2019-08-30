@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-21 16:55:58
- * @LastEditTime: 2019-08-22 18:02:13
+ * @LastEditTime: 2019-08-30 10:09:12
  -->
 <template>
   <div :class="hoverClass">
@@ -168,7 +168,7 @@ export default {
       }
       &-9 {
         @include bg(
-          "http://www.hndt.com/nh5/hndt/20190821/imgs/page-8-lite.png"
+          "http://www.hndt.com/nh5/hndt/20190821/imgs/page-9-lite.png"
         );
         background-position: center center;
         background-repeat: no-repeat;
