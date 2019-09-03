@@ -4,12 +4,14 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-03-04 10:45:55
- * @LastEditTime: 2019-08-23 10:37:19
+ * @LastEditTime: 2019-09-03 16:10:07
  */
 import { WeChat_init } from './weChat_config'
 import { GetOpenIdByCode, WeChat_Conf_Init } from '@api/weChat'
 import { appId, shareLink } from 'conf/weChatShare_conf'
 
+import store from 'store'
+import STORE_NAME from 'conf/store_conf'
 class WeChat {
 	constructor() {
 		this.baseUrl = 'https://open.weixin.qq.com/connect/oauth2/authorize?'
@@ -70,9 +72,12 @@ class WeChatConf extends WeChat {
 	}
 	async init() {
 		try {
-			this.hasCode();  //微信授权
+			if (!store.get(STORE_NAME)) {
+				this.hasCode();  //微信授权
+			}
 			let data = await WeChat_Conf_Init()
 			WeChat_init(data)
+
 		} catch (e) {
 			console.log(e)
 		}
