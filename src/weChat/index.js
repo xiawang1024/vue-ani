@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-03-04 10:45:55
- * @LastEditTime: 2019-08-23 10:36:50
+ * @LastEditTime: 2019-09-03 10:54:46
  */
 import store from 'store'
 import STORE_NAME from 'conf/store_conf'
@@ -25,4 +25,3 @@ if (!store.get(STORE_NAME)) {
 // 	weChatConf.init()
 // }
 
-weChatConf.init()
