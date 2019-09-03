@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-08-21 15:01:38
- * @LastEditTime: 2019-08-23 11:07:12
+ * @LastEditTime: 2019-09-03 11:47:44
  -->
 <template>
   <div class="poker">
@@ -69,7 +69,9 @@ export default {
   },
 
   mounted() {
-    this._getZanStatusList()
+    setTimeout(() => {
+      this._getZanStatusList()
+    }, 1000)
   },
 
   methods: {
