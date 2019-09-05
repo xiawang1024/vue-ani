@@ -1,3 +1,11 @@
+<!--
+ * @Description: 
+ * @Version: 0.0.1
+ * @Company: hNdt
+ * @Author: xiaWang1024
+ * @Date: 2019-03-13 17:42:56
+ * @LastEditTime: 2019-09-05 15:39:40
+ -->
 <template>
   <div :class="generateClass()" @click="triggleHandler">
     <audio
@@ -8,7 +16,7 @@
       height="0"
       @play="bgmPlayHandler"
       @pause="bgmPauseHandler"
-      src="http://www.hndt.com/nh5/xinwen/20190531/audio/bgm.mp3"
+      src="http://www.hndt.com/nh5/hndt/20190821/audio/bgm.mp3"
     ></audio>
   </div>
 </template>
@@ -29,7 +37,7 @@ export default {
   },
   methods: {
     bgmInit(idSelect) {
-      this.bgm.volume = 0.2;
+      this.bgm.volume = 0.8;
       audioAutoPlay(idSelect);
     },
     bgmPlayHandler() {

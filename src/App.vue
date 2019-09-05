@@ -4,15 +4,16 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-03-13 08:54:36
- * @LastEditTime: 2019-09-05 15:07:44
+ * @LastEditTime: 2019-09-05 15:38:39
  -->
 <template>
   <div id="app">
     <!-- <Index></Index> -->
-    <!-- <Bgm></Bgm> -->
+
     <!-- <Arrow /> -->
     <!-- <transition name="fade" mode="out-in"></transition> -->
     <router-view />
+    <Bgm class="bgm"></Bgm>
   </div>
 </template>
 
@@ -47,6 +48,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   box-sizing: border-box;
+}
+.bgm {
+  position: absolute;
 }
 .page-desc {
   margin-bottom: 8px;
