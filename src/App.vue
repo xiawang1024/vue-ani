@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-03-13 08:54:36
- * @LastEditTime: 2019-08-23 11:15:52
+ * @LastEditTime: 2019-09-05 15:07:44
  -->
 <template>
   <div id="app">
@@ -38,6 +38,7 @@ export default {
   left: 0;
   bottom: 0;
   width: 750px;
+  max-width: 750px;
   height: 100%;
   margin: auto;
   font-family: "PingFang SC", Helvetica, Arial, sans-serif;
