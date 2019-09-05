@@ -4,7 +4,7 @@
  * @Company: hNdt
  * @Author: xiaWang1024
  * @Date: 2019-03-13 17:42:56
- * @LastEditTime: 2019-09-05 15:39:40
+ * @LastEditTime: 2019-09-05 16:07:20
  -->
 <template>
   <div :class="generateClass()" @click="triggleHandler">
@@ -87,12 +87,12 @@ export default {
   height: $height;
   &-play {
     // animation: rotate360 2.5s linear infinite;
-    background: url("http://www.hndt.com/nh5/xinwen/20190531/imgs/cd-on.png")
+    background: url("http://www.hndt.com/nh5/hndt/20190821/imgs/cd-on.png")
       center center no-repeat;
     background-size: contain;
   }
   &-pause {
-    background: url("http://www.hndt.com/nh5/xinwen/20190531/imgs/cd-off.png")
+    background: url("http://www.hndt.com/nh5/hndt/20190821/imgs/cd-off.png")
       center center no-repeat;
     background-size: contain;
   }
