@@ -1,3 +1,11 @@
+/*
+ * @Description: 
+ * @Version: 0.0.1
+ * @Company: hNdt
+ * @Author: xiaWang1024
+ * @Date: 2019-09-03 11:43:53
+ * @LastEditTime: 2019-09-10 09:17:36
+ */
 import axios from 'axios'
 import Qs from 'qs'
 import store from 'store'
@@ -33,6 +41,12 @@ const GetOpenIdByCode = (code, state, subscribe = false) => {
 			})
 	})
 }
+
+/**
+ * config 配置  
+ * url:当前url
+ * appId：公众号appId
+ */
 
 const WeChat_Conf_Init = () => {
 	return new Promise((resolve, reject) => {
