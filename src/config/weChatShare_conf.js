@@ -13,8 +13,8 @@ const baseURL = "http://www.hndt.com/nh5/hndt/20190821/html";
  */
 const appId = "wx5f789dea59c6c2c5";
 const shareLink = `${baseURL}/index.html`;
-const shareTitle = "来！一起给郑州地标翻牌子吧——献礼新中国70华诞";
-const shareDesc = "提起郑州，你最先想到的是哪里？二七塔？火车站？大玉米？河南广播网梳理郑州的几大热门地标建筑，来为您中意的地标点赞打call吧~";
+const shareTitle = "来！为你喜欢的郑州地标翻牌子吧";
+const shareDesc = "河南广播电视台·河南广播网 献礼新中国成立70周年特别呈现";
 const shareImg = `http://www.hndt.com/nh5/hndt/20190821/imgs/icon-share.png`;
 
 export { appId, shareLink, shareTitle, shareDesc, shareImg };
