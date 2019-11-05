@@ -84,7 +84,7 @@
 @mixin bg($url) {
     background-image: url($url);
 
-    @at-root (with: all) .webps & {
+    @at-root .webps & {
         background-image: url($url + '.webp');
     }
 }
