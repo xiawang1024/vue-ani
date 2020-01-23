@@ -1,14 +1,17 @@
 <template>
   <div class="index">
     <swiper :options="swiperOption" ref="mySwiper" class="swiper-wrap">
-      <swiper-slide class="swiper">
+      <!-- <swiper-slide class="swiper">
         <Scenes :index="1" />
-      </swiper-slide>
+      </swiper-slide>-->
       <swiper-slide class="swiper">
         <ColleExam :index="2" />
       </swiper-slide>
       <swiper-slide class="swiper">
         <ColleExam :index="3" />
+      </swiper-slide>
+      <swiper-slide v-for="slide in swiperMap" :key="slide.id">
+        <component :is="slide.name"></component>
       </swiper-slide>
       <!-- <swiper-slide class="swiper">
         <ColleExam :index="4" />
@@ -42,7 +45,7 @@
       </swiper-slide>-->
     </swiper>
     <div style="display:none">
-      <ColleExam :index="11" ref="append" />
+      <ColleExam :index="4" ref="append" />
     </div>
     <button class="btn" @click="appendSlide">appendSlide</button>
   </div>
@@ -62,6 +65,21 @@ import * as swiperAni from "common/js/swiper.animate.js";
 
 import Scenes from "components/Scenes/index.vue";
 import ColleExam from "components/ColleExam/index.vue";
+import Stick from 'components/stick/index.vue'
+import Start from 'components/start/index.vue'
+import End from 'components/end/index.vue'
+
+/**
+ * map
+ */
+const componetMap = [
+  {
+    id: 0, name: 'start'
+  },
+  // {
+  //   id: 1, name: 'end'
+  // }
+]
 
 export default {
   name: "app",
@@ -69,7 +87,10 @@ export default {
     swiper,
     swiperSlide,
     Scenes,
-    ColleExam
+    ColleExam,
+    Stick,
+    Start,
+    End
   },
   data() {
     return {
@@ -85,24 +106,42 @@ export default {
             swiperAni.swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
           }
         }
-      }
+      },
+      componetMap: componetMap
     };
   },
   computed: {
     swiperSlide() {
       return this.$refs.mySwiper.swiper
+    },
+    swiperMap() {
+      return this.componetMap
     }
   },
   methods: {
-    appendSlide() {
-      console.log(this.$refs.append)
-      console.log(this.$refs.append.$el.outerHTML)
+    /**
+     * 方案一
+     */
+    // appendSlide() {
+    //   console.log(this.$refs.append)
+    //   console.log(this.$refs.append.$el.outerHTML)
 
-      // this.swiperSlide.appendSlide('<div class="swiper-slide">Slide 10</div>')
-      this.swiperSlide.appendSlide(`<div class='swiper swiper-slide swiper-slide-next'>${this.$refs.append.$el.outerHTML}</div>`)
-      setTimeout(() => {
+    //   // this.swiperSlide.appendSlide('<div class="swiper-slide">Slide 10</div>')
+    //   this.swiperSlide.appendSlide(`<div class='swiper swiper-slide swiper-slide-next'>${this.$refs.append.$el.outerHTML}</div>`)
+    //   setTimeout(() => {
+    //     this.swiperSlide.slideNext(750)
+    //   }, 300)
+    // }
+    appendSlide() {
+      this.componetMap.push({
+        id: 1, name: 'end'
+      })
+      this.$nextTick(() => {
+        swiperAni.swiperAnimateCache(this.swiperSlide); //隐藏动画元素
+        swiperAni.swiperAnimate(this.swiperSlide);
         this.swiperSlide.slideNext(750)
-      }, 300)
+      })
+
     }
   }
 };
