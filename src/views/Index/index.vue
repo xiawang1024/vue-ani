@@ -38,7 +38,8 @@ import * as swiperAni from "common/js/swiper.animate.js";
 
 import Item from 'components/Item/index.vue'
 
-import mockData from './mock'
+// import mockData from './mock'
+import axios from 'axios'
 
 export default {
   name: "app",
@@ -66,18 +67,32 @@ export default {
     };
   },
   mounted() {
-    this.yearData = mockData.result
-    window.getYearData = function(data) {
-      this.fetchData(data)
-    }
+    // this.yearData = mockData.result
+    // window.getYearData = function(data) {
+    //   this.fetchData(data)
+    // }
+    // console.log(this.getQueryString('code'))
+    this._fetchData()
   },
   methods:{
-    fetchData(data) {
-      let {code,result} =data
-      if(code ===0) {
-        this.yearData = result
-      }else {
-        console.log('未接收到数据')
+    _fetchData() {
+      let code = this.getQueryString('code')
+      axios.get(`http://192.168.20.152:9357/api/patrol/staristic/mulByYear?code=${code}`).then(res => {
+        let {code,result} = res.data
+        if(code ===0) {
+          this.yearData = result
+        }else {
+          console.log('未接收到数据')
+        }
+      })      
+    },
+    getQueryString(name) {
+      var url = new RegExp('(^|&)' + name + '=([^&]*)(&|$)')
+      var newUrl = window.location.search.substr(1).match(url)
+      if (newUrl != null) {
+        return unescape(newUrl[2])
+      } else {
+        return false
       }
     }
   }

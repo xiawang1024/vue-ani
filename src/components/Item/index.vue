@@ -149,11 +149,15 @@ export default {
   props: {
     itemData: {
       type: Object,
-      default: {}
+      default: () =>{
+        return {}
+      }
     },
     itemData2: {
       type: Object,
-      default: {}
+      default: () =>{
+        return {}
+      }
     },
     user: {
       type: String,
