@@ -5,7 +5,7 @@ function resolve(dir) {
 }
 
 module.exports = {
-	baseUrl: './',
+	publicPath: './',
 	/**
 	 * 别名设置
 	 */

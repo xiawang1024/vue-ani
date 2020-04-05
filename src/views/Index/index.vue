@@ -2,44 +2,24 @@
   <div class="index">
     <swiper :options="swiperOption" ref="mySwiper" class="swiper-wrap">
       <swiper-slide class="swiper">
-        <Scenes :index="1"/>
+        <Item :index="1" />
       </swiper-slide>
       <swiper-slide class="swiper">
-        <ColleExam :index="2"/>
+        <Item :index="2" :itemData='yearData.signData'/>
       </swiper-slide>
       <swiper-slide class="swiper">
-        <ColleExam :index="3"/>
+        <Item :index="3" :itemData='yearData.examinePersonData' :itemData2='yearData.examineCarData'/>
       </swiper-slide>
       <swiper-slide class="swiper">
-        <ColleExam :index="4"/>
+        <Item :index="4" :itemData='yearData.trainData'/>
       </swiper-slide>
       <swiper-slide class="swiper">
-        <ColleExam :index="5"/>
+        <Item :index="5" :itemData='yearData.reportData'/>
       </swiper-slide>
       <swiper-slide class="swiper">
-        <ColleExam :index="6"/>
+        <Item :index="6" :user='yearData.user'/>
       </swiper-slide>
-      <swiper-slide class="swiper">
-        <Scenes :index="2"/>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <ColleExam :index="7"/>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <ColleExam :index="8"/>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <ColleExam :index="9"/>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <Scenes :index="3"/>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <ColleExam :index="10"/>
-      </swiper-slide>
-      <swiper-slide class="swiper">
-        <ColleExam :index="11"/>
-      </swiper-slide>
+      
     </swiper>
   </div>
 </template>
@@ -56,19 +36,20 @@ import * as swiperAni from "common/js/swiper.animate.js";
  * 页面组件引入
  */
 
-import Scenes from "components/Scenes/index.vue";
-import ColleExam from "components/ColleExam/index.vue";
+import Item from 'components/Item/index.vue'
+
+import mockData from './mock'
 
 export default {
   name: "app",
   components: {
     swiper,
-    swiperSlide,
-    Scenes,
-    ColleExam
+    swiperSlide,    
+    Item
   },
   data() {
     return {
+      yearData:{},
       swiperOption: {
         direction: "vertical",
         // loop : true,
@@ -83,6 +64,22 @@ export default {
         }
       }
     };
+  },
+  mounted() {
+    this.yearData = mockData.result
+    window.getYearData = function(data) {
+      this.fetchData(data)
+    }
+  },
+  methods:{
+    fetchData(data) {
+      let {code,result} =data
+      if(code ===0) {
+        this.yearData = result
+      }else {
+        console.log('未接收到数据')
+      }
+    }
   }
 };
 </script>
